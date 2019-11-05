@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="SwampSimulator">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/dist/SwampSimulator.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

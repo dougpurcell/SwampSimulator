@@ -15,6 +15,7 @@ public class Login extends javax.swing.JPanel {
      */
     public Login() {
         initComponents();
+        setVisible(true);
     }
 
     /**
