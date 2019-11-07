@@ -70,10 +70,10 @@ public class Player{
     public void keyPressed(KeyEvent e){
     
         if (e.getKeyCode() == KeyEvent.VK_A){
-            xa = -2;
+            xa = -3;
         }
         if (e.getKeyCode() == KeyEvent.VK_D){
-            xa = 2;
+            xa = 3;
         }
         if (e.getKeyCode() == KeyEvent.VK_W){
             
