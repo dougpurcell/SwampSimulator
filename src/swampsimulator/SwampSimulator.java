@@ -15,7 +15,8 @@ public class SwampSimulator extends JFrame {
     }
 
 public static void main(String args[]) throws InterruptedException {
-        Login lgn = new Login();
+        Login lgn = new Login(); // DOUGNOTE: comment out and uncomment item.
+        // Item item = new Item(); // DOUGNOTE: For testing to avoid loading Login.
         
         /* C A M E R O N:
             uncomment your shit to work on the game bro.

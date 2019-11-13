@@ -8,6 +8,9 @@ package swampsimulator;
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*;
+import java.awt.image.BufferedImage;
+import java.io.*;
+import javax.imageio.ImageIO;
 
 /**
  *
@@ -19,19 +22,31 @@ class Item extends JFrame implements ActionListener{
     protected String name;
     protected String description;
     protected int price;
-    protected String thumbnail;
  
     public Item() {
-        setTitle("Swamp Simulator"); 
-        setSize(1200,800);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        
-        setVisible(true);
+        SwampSimulator ss = new SwampSimulator();
+//        JPanel Adventure = new JPanel();
+        //TODO Work on this too doug. come on man.
     }
-    
-    
+     
 //    public class Adventure extends Item {
-//        
+//    //TODO: work on this Doug    
+//        public class ImagePanel extends JPanel{
+//            private BufferedImage thumbnail;
+//            
+//            public ImagePanel() {
+//                try {                
+//                thumbnail = ImageIO.read(new File("/assets/img/shrekmoviethumb.jpg"));
+//                } 
+//                catch (IOException ex) {
+//                    // handle exception...
+//                }
+//            }
+//        @Override
+//        protected void paintComponent(Graphics g) {
+//            super.paintComponent(g);
+//            g.drawImage(thumbnail, 0, 0, this); // see javadoc for more info on the parameters            
+//        }
 //    }
 //    
 //    public class Character extends Item {
