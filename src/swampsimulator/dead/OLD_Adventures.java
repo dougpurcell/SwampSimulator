@@ -3,7 +3,7 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package swampsimulator;
+package swampsimulator.dead;
 import javax.imageio.ImageIO;
 import java.awt.image.BufferedImage;
 import java.io.File;
@@ -12,7 +12,7 @@ import java.io.IOException;
  *
  * @author doug
  */
-public class Adventures extends javax.swing.JPanel {
+public class OLD_Adventures extends javax.swing.JPanel {
 
     protected class AdventurePanel1 extends javax.swing.JPanel {
         private BufferedImage image;
@@ -28,7 +28,7 @@ public class Adventures extends javax.swing.JPanel {
     /**
      * Creates new form Adventures
      */
-    public Adventures() {
+    public OLD_Adventures() {
         initComponents();
     }
 

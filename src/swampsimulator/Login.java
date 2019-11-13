@@ -10,11 +10,10 @@ import java.awt.*;
 import java.awt.event.*;
 
 /**
- *
- * @author doug
+ * @author dougbug
  */
+
 class Login extends JFrame implements ActionListener {
-    SwampSimulator swampsim;
     
     private Container loginContainer;
     private JLabel title; 
@@ -32,11 +31,13 @@ class Login extends JFrame implements ActionListener {
         
         loginContainer = getContentPane(); 
         loginContainer.setLayout(null); 
+        loginContainer.setBackground(new java.awt.Color(253,243,194));
         
         title = new JLabel("Welcome to Swamp Simulator"); 
         title.setFont(new Font("Shrek", Font.PLAIN, 30)); 
+        title.setForeground(new java.awt.Color(198,213,136));
         title.setSize(800, 30); 
-        title.setLocation(150, 30); 
+        title.setLocation(200, 30); 
         loginContainer.add(title); 
   
         user = new JLabel("Name"); 
@@ -65,17 +66,24 @@ class Login extends JFrame implements ActionListener {
         
         loginButton = new JButton("Log In");
         loginButton.setFont(new Font("Helvetica", Font.PLAIN, 14));
-        loginButton.setBackground(new java.awt.Color(179, 203, 70));
-        loginButton.setForeground(new java.awt.Color(255,255,255));
+        loginButton.setBackground(new java.awt.Color(198, 213, 136));
         loginButton.setSize(90,35);
         loginButton.setLocation(100,200);
+        loginButton.addActionListener(this);
         loginContainer.add(loginButton);
+        
         setVisible(true);
     }
-
+    
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object source = e.getSource();
+        if (source == loginButton) {
+            Item item = new Item();
+            Login.super.dispose();
+            
+        }
+        
+        repaint();
     }
-    
 }
