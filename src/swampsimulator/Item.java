@@ -19,23 +19,31 @@ import javax.imageio.ImageIO;
 
 class Item extends JFrame implements ActionListener{
     protected JPanel item;
+    protected JButton button;
     
-    public Item() {
+    public Item() throws IOException {
         SwampSimulator ss = new SwampSimulator();
         ss.setBackground(new java.awt.Color(245, 245, 245));
         
         int i = 1; //Fake DB
         
-        while (i < 6) { // Fake DB
-            item = new JPanel();
-            item.setSize(200, 200);
-            item.setBackground(Color.green);
-            item.setLocation(100 * i, 50);
-            ss.add(item);
-            ++i;
+        while (i <= 6) { // Fake DB
+//            item = new JPanel();
+//            item.setSize(200, 200);
+//            item.setBackground(Color.green);
+//            item.setLocation(100 * i, 50);
+//            ss.add(item);
+
+        BufferedImage buttonIcon = ImageIO.read(new File("/assets/img/shrekmoviethumb.jpg"));
+        button = new JButton(new ImageIcon(buttonIcon));  
+        button.setBorder(BorderFactory.createEmptyBorder());
+        button.setContentAreaFilled(false);
+        ss.add(button);
+        
+        ++i;
         }
         
-        GridLayout itemgrid = new GridLayout(3,3);
+        GridLayout itemgrid = new GridLayout(3,3, 10, 10);
         ss.setLayout(itemgrid);
 //        
 //        GridLayout grid = new GridLayout(3,3);

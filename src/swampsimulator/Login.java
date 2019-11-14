@@ -8,6 +8,9 @@ package swampsimulator;
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*;
+import java.io.IOException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
 /**
  * @author dougbug
@@ -79,9 +82,12 @@ class Login extends JFrame implements ActionListener {
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == loginButton) {
-            Item item = new Item();
+            try {
+                Item item = new Item();
+            } catch (IOException ex) {
+                Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
+            }
             Login.super.dispose();
-            
         }
         
         repaint();
