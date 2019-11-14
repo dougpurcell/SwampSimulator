@@ -28,22 +28,19 @@ class Item extends JFrame implements ActionListener{
         int i = 1; //Fake DB
         
         while (i <= 6) { // Fake DB
-//            item = new JPanel();
-//            item.setSize(200, 200);
-//            item.setBackground(Color.green);
-//            item.setLocation(100 * i, 50);
-//            ss.add(item);
-
-        BufferedImage buttonIcon = ImageIO.read(new File("/assets/img/shrekmoviethumb.jpg"));
+            
+        BufferedImage buttonIcon = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // Fake DB
         button = new JButton(new ImageIcon(buttonIcon));  
         button.setBorder(BorderFactory.createEmptyBorder());
+        button.setSize(50, 50);
         button.setContentAreaFilled(false);
         ss.add(button);
         
         ++i;
+        
         }
         
-        GridLayout itemgrid = new GridLayout(3,3, 10, 10);
+        FlowLayout itemgrid = new FlowLayout(FlowLayout.LEFT);
         ss.setLayout(itemgrid);
 //        
 //        GridLayout grid = new GridLayout(3,3);
