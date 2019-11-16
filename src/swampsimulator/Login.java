@@ -40,7 +40,7 @@ class Login extends JFrame implements ActionListener {
         title.setFont(new Font("Shrek", Font.PLAIN, 30)); 
         title.setForeground(new java.awt.Color(198,213,136));
         title.setSize(800, 30); 
-        title.setLocation(200, 30); 
+        title.setLocation(200, 30);
         loginContainer.add(title); 
   
         user = new JLabel("Name"); 
@@ -74,7 +74,7 @@ class Login extends JFrame implements ActionListener {
         loginButton.setLocation(100,200);
         loginButton.addActionListener(this);
         loginContainer.add(loginButton);
-        
+
         setVisible(true);
     }
     

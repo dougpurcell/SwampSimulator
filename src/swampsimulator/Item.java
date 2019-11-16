@@ -10,6 +10,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.imageio.ImageIO;
 
 /**
@@ -18,55 +20,48 @@ import javax.imageio.ImageIO;
  */
 
 class Item extends JFrame implements ActionListener{
-    protected JPanel item;
-    protected JButton button;
-    
+
+    protected JButton itemButton;
+    SwampSimulator ss = new SwampSimulator();
+
+
     public Item() throws IOException {
-        SwampSimulator ss = new SwampSimulator();
+
         ss.setBackground(new java.awt.Color(245, 245, 245));
-        
-        int i = 1; //Fake DB
-        
-        while (i <= 6) { // Fake DB
-            
-        BufferedImage buttonIcon = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // Fake DB
-        button = new JButton(new ImageIcon(buttonIcon));  
-        button.setBorder(BorderFactory.createEmptyBorder());
-        button.setSize(50, 50);
-        button.setContentAreaFilled(false);
-        ss.add(button);
-        
-        ++i;
-        
+
+        int i = 1;
+
+        while (i <= 6) { // Fake DB; with db would be something like length of array of DB objects
+
+            BufferedImage buttonIcon = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // Fake DB, should pull from array of DB Objects
+            itemButton = new JButton(new ImageIcon(buttonIcon));
+            itemButton.setBorder(BorderFactory.createEmptyBorder());
+            itemButton.setSize(200, 200);
+            itemButton.setContentAreaFilled(false);
+            itemButton.addActionListener(this);
+
+            ss.add(itemButton);
+
+            ++i;
+// TODO: BUG: only last button is clickable. all buttons need to be clickable.
         }
-        
-        FlowLayout itemgrid = new FlowLayout(FlowLayout.LEFT);
-        ss.setLayout(itemgrid);
-//        
-//        GridLayout grid = new GridLayout(3,3);
-//        items.setLayout(grid);
-//        while (i < 6) {
-//            adventure = new JPanel();
-//            adventure.setSize(100, 100);
-//            adventure.setLocation(200, 30);
-//            adventure.setBackground(Color.green);
-//            items.add(adventure);
-//            
-//            i++;
-//        }
-       setVisible(true);
-    }  
-        
-        //TODO Work on this too doug. come on man.
-     
-//    public class Adventure extends Item { 
-//    //TODO: work on this Doug    
-//       
-//    }
-//    
+
+        FlowLayout itemGrid = new FlowLayout(FlowLayout.LEFT);
+        ss.setLayout(itemGrid);
+
+        setVisible(true);
+    }
+
     @Override
     public void actionPerformed(ActionEvent e) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+        Object source = e.getSource();
+        if (source == itemButton) {
+            // fix
+//            ss.add();
+            System.out.println("cmon doug");
+
+        }
+        repaint();
     }
     
 }
