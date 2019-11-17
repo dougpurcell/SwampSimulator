@@ -83,7 +83,7 @@ class Login extends JFrame implements ActionListener {
         Object source = e.getSource();
         if (source == loginButton) {
             try {
-                Item item = new Item();
+                Adventure adventure = new Adventure();
             } catch (IOException ex) {
                 Logger.getLogger(Login.class.getName()).log(Level.SEVERE, null, ex);
             }

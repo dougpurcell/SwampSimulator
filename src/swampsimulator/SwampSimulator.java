@@ -16,6 +16,7 @@ public class SwampSimulator extends JFrame {
 
 public static void main(String args[]) throws InterruptedException {
     Login lgn = new Login(); // DOUGNOTE: comment out and uncomment item.
+
 //        ItemPanel itm = new ItemPanel();
 //        SwampSimulator ss = new SwampSimulator();
 //        ss.add(itm);
