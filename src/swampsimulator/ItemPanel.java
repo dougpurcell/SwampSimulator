@@ -5,7 +5,7 @@ import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 
-public class ItemPanel {
+public class ItemPanel extends JPanel {
 
 //    Container itemPanel;
 //    JLabel itemName = new JLabel("doug");
@@ -14,7 +14,10 @@ public class ItemPanel {
 //    JButton addToCart = new JButton("Add To Cart");
 //    JButton backToSelect = new JButton("Back");
 
-    ItemPanel() {
+    public ItemPanel() {
+
+        // TODO make into frame, on add to cart, set visible to close.
+        //
 
         JPanel itemPanel = new JPanel();
         JLabel itemName = new JLabel("doug");

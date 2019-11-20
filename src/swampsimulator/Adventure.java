@@ -17,32 +17,34 @@ import javax.imageio.ImageIO;
  * @author dougles
  */
 
-class Adventure extends JFrame implements ActionListener{
+class Adventure extends JPanel implements ActionListener{
 
     protected JButton itemButton;
-    SwampSimulator ss = new SwampSimulator();
+    protected SwampSimulator gui;
 
-    public Adventure() throws IOException {
-        ss.setBackground(new java.awt.Color(245, 245, 245));
-        int i = 1;
 
-        while (i <= 6) { // Fake DB; with db would be something like length of array of DB objects
+    public Adventure(SwampSimulator ss) throws IOException {
+        gui = ss;
 
-            BufferedImage buttonIcon = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // Fake DB, should pull from array of DB Objects
-            itemButton = new JButton(new ImageIcon(buttonIcon));
+        setBackground(new Color(245, 245, 245));
+        setSize(800,800);
+        setLocation(0,0);
+
+
+        for(int i = 1; i <= 6; i++) { // Fake DB; with db would be something like length of array of DB objects
+            BufferedImage buttonIcon = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg"));
+
+            itemButton = new JButton( new ImageIcon(buttonIcon));
             itemButton.setBorder(BorderFactory.createEmptyBorder());
             itemButton.setSize(200, 200);
             itemButton.setContentAreaFilled(false);
             itemButton.addActionListener(this);
+            add(itemButton);
 
-            ss.add(itemButton);
-
-            ++i;
-// TODO: BUG: only last button is clickable. all buttons need to be clickable.
         }
 
         FlowLayout itemGrid = new FlowLayout(FlowLayout.LEFT);
-        ss.setLayout(itemGrid);
+        setLayout(itemGrid);
 
         setVisible(true);
     }
@@ -51,9 +53,7 @@ class Adventure extends JFrame implements ActionListener{
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == itemButton) {
-            // fix add Popup here
-
-            System.out.println("cmon doug");
+            gui.changePanel("adventure", "character");
 
         }
         repaint();

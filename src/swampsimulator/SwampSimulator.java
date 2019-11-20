@@ -1,39 +1,82 @@
 package swampsimulator;
+
 import javax.swing.*;
+import java.io.IOException;
 
 /**
  * @author dougthebicyclist
  * @author cammybaby
  */
-public class SwampSimulator extends JFrame {
-    
-    public SwampSimulator() {
-        super("Swamp Simulator");
-        setSize(1200,800);
-        setDefaultCloseOperation(EXIT_ON_CLOSE);
-        setVisible(true);
+public class SwampSimulator {
+    private JFrame ss;
+    private Login lgn;
+    private Adventure adv;
+//    private Character chr;
+//    private Order odr;
+//    private Game game;
+
+    public void initialize() throws IOException {
+        ss = new JFrame("Swamp Simulator");
+        lgn = new Login(this);
+        adv = new Adventure(this);
+
+        ss.setSize(1200, 800);
+        ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        ss.setLocationRelativeTo(null);
+        ss.setVisible(true);
+        ss.add(lgn); // DOUG NOTE: switch this to test individual panels
+    }
+    public void changePanel (String Old, String New) {
+        if (Old.equals("login")){
+            ss.remove(lgn);
+        }
+        else if (Old.equals("adventure")){
+            ss.remove(adv);
+        }
+//        else if (Old.equals("character")){
+//            ss.remove(chr);
+//        }
+//        else (Old.equals("order")){
+//            ss.remove(odr);
+//        }
+
+        if (New.equals("adventure")){
+            ss.add(adv);
+        }
+//        else if (New.equals("character")){
+//            ss.add(chr);
+//        }
+//        else if (New.equals("order")){
+//            ss.add(odr);
+//        }
+//        else (New.equals("game")){
+//            ss.add(game);
+//        }
+
+        ss.validate();
+        ss.pack();
+
     }
 
-public static void main(String args[]) throws InterruptedException {
-    Login lgn = new Login(); // DOUGNOTE: comment out and uncomment item.
+public static void main(String args[]) throws InterruptedException, IOException {
 
-//        ItemPanel itm = new ItemPanel();
-//        SwampSimulator ss = new SwampSimulator();
-//        ss.add(itm);
+    SwampSimulator ss = new SwampSimulator();
+    ss.initialize();
+
         /* C A M E R O N:
             uncomment your shit to work on the game bro.
         */
-        
+
         // this would be the shit connected to the "checkout" button
 //        JFrame frame = new JFrame("me swamp");
-//        
+//
 //        Game game = new Game();
-//        
+//
 //        frame.add(game);
 //        frame.setSize(1280, 720);
 //        frame.setVisible(true);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
-//        
+//
 //        while (true){
 //            game.move();
 //            game.repaint();
