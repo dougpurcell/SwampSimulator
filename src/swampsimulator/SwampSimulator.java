@@ -11,7 +11,7 @@ public class SwampSimulator {
     private JFrame ss;
     private Login lgn;
     private Adventure adv;
-//    private Character chr;
+    private Character chr;
 //    private Order odr;
 //    private Game game;
 
@@ -19,6 +19,7 @@ public class SwampSimulator {
         ss = new JFrame("Swamp Simulator");
         lgn = new Login(this);
         adv = new Adventure(this);
+        chr = new Character(this);
 
         ss.setSize(1200, 800);
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -33,9 +34,9 @@ public class SwampSimulator {
         else if (Old.equals("adventure")){
             ss.remove(adv);
         }
-//        else if (Old.equals("character")){
-//            ss.remove(chr);
-//        }
+        else if (Old.equals("character")){
+            ss.remove(chr);
+        }
 //        else (Old.equals("order")){
 //            ss.remove(odr);
 //        }
@@ -43,9 +44,9 @@ public class SwampSimulator {
         if (New.equals("adventure")){
             ss.add(adv);
         }
-//        else if (New.equals("character")){
-//            ss.add(chr);
-//        }
+        else if (New.equals("character")){
+            ss.add(chr);
+        }
 //        else if (New.equals("order")){
 //            ss.add(odr);
 //        }

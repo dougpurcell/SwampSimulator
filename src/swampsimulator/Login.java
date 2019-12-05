@@ -35,8 +35,6 @@ public class Login extends JPanel implements ActionListener {
         setSize(600,400);
         setLocation(300,150);
 
-//        setBorder(BorderFactory.createLineBorder(Color.CYAN, 2,true));
-
         title = new JLabel("Welcome to Swamp Simulator");
         title.setFont(new Font("Shrek", Font.PLAIN, 30));
         title.setForeground(new java.awt.Color(198,213,136));
