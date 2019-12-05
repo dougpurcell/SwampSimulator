@@ -11,32 +11,38 @@ public class SwampSimulator {
     private JFrame ss;
     private Login lgn;
     private Adventure adv;
-    private Character chr;
+    private AdventurePanel advpanel;
+
+//    private Character chr;
+//    private CharacterPanel chrpanel;
 //    private Order odr;
-//    private Game game;
+    protected Game game;
 
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
         lgn = new Login(this);
         adv = new Adventure(this);
-        chr = new Character(this);
+        advpanel = new AdventurePanel();
+        game = new Game();
+//        chr = new Character(this);
 
         ss.setSize(1200, 800);
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
-        ss.add(lgn); // DOUG NOTE: switch this to test individual panels
+        ss.add(lgn);
     }
     public void changePanel (String Old, String New) {
-        if (Old.equals("login")){
+        if (Old.equals("login")) {
             ss.remove(lgn);
         }
-        else if (Old.equals("adventure")){
+        else if (Old.equals("adventure")) {
             ss.remove(adv);
         }
-        else if (Old.equals("character")){
-            ss.remove(chr);
-        }
+
+//        else if (Old.equals("character")){
+//            ss.remove(chr);
+//        }
 //        else (Old.equals("order")){
 //            ss.remove(odr);
 //        }
@@ -44,9 +50,12 @@ public class SwampSimulator {
         if (New.equals("adventure")){
             ss.add(adv);
         }
-        else if (New.equals("character")){
-            ss.add(chr);
+        else if (New.equals("advpanel")) {
+            ss.add(advpanel);
         }
+//        else if (New.equals("character")){
+//            ss.add(chr);
+//        }
 //        else if (New.equals("order")){
 //            ss.add(odr);
 //        }
@@ -82,7 +91,7 @@ public static void main(String args[]) throws InterruptedException, IOException 
 //            game.move();
 //            game.repaint();
 //            Thread.sleep(10);
-
+//
 //        }
     }
 

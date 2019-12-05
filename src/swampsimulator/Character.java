@@ -32,7 +32,7 @@ class Character extends JPanel implements ActionListener{
         setBackground(new Color(245, 245, 245));
         setSize(800,800);
         setPreferredSize(new Dimension(1200,800));
-        setLocation(10,10);
+        setLocation(50,25);
 
 
         for(int i = 1; i <= 12; i++) { // Fake DB; with db would be something like length of array of DB objects
