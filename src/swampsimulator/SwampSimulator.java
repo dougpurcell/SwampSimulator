@@ -77,7 +77,7 @@ public static void main(String args[]) throws InterruptedException, IOException 
             uncomment your shit to work on the game bro.
         */
 
-        // this would be the shit connected to the "checkout" button
+//         this would be the shit connected to the "checkout" button
 //        JFrame frame = new JFrame("me swamp");
 //
 //        Game game = new Game();

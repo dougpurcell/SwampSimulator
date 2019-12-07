@@ -6,7 +6,9 @@
 package swampsimulator;
 
 import java.awt.Graphics2D;
+import java.awt.Image;
 import java.awt.Rectangle;
+import javax.swing.ImageIcon;
 
 /**
  *
@@ -17,13 +19,23 @@ public class badGuy {
     private static final int y = 380;
     private static final int WIDTH = 30;
     private static final int HEIGHT = 150;
+    private Image image;
+    private int w, h;
     
     private Game game;
     
     public badGuy(Game game) {
         this.game = game;
+        loadImage();
     }
-    
+    private void loadImage() {
+        
+        ImageIcon ii = new ImageIcon("src/gameArt/badguy.png");
+        image = ii.getImage(); 
+        
+        w = image.getWidth(null);
+        h = image.getHeight(null);
+    }
     void move(){
         
         x = x - 4;
@@ -33,9 +45,14 @@ public class badGuy {
         }
         
     }
-    
+    public Image getImage() {
+        
+        return image;
+    }
     public void paint(Graphics2D g) {
-        g.fillRect(x, y, WIDTH, HEIGHT);
+        //g.setColor();
+        //g.fillRect(x, y, WIDTH, HEIGHT);
+        g.drawImage(getImage(), x, y, game);
         g.drawLine(0, 530, 1280, 530);
     }
     

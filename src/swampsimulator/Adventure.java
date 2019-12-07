@@ -55,7 +55,6 @@ class Adventure extends JPanel implements ActionListener{
         Object source = e.getSource();
         if (source == itemButton) {
             gui.changePanel("adventure", "advpanel");
-
         }
         repaint();
     }
