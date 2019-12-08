@@ -22,7 +22,9 @@ import javax.swing.JPanel;
  */
 public class Game extends JPanel {
     Player player = new Player(this);
+    
     badGuy badGuy = new badGuy(this);
+    String characters[] = new String[]{"src/gameArt/shrek.gif","src/gameArt/donkey.gif","src/gameArt/fiona.gif","src/gameArt/3 mice.gif"};
     public Game(){
         
         // adds keyListeners in the game constructor class for key typed, pressed, and released
@@ -46,7 +48,7 @@ public class Game extends JPanel {
 
         });
         setFocusable(true);
-        
+        player.loadImage();
     }
     
     @Override
@@ -65,11 +67,15 @@ public class Game extends JPanel {
         r2 = player.getBounds();
         return r1.intersects(r2);
     }
+    public int returnCount(){
+        return player.count;
+    }
     public void gameOver(int count){
         if (count > 3){
             JOptionPane.showMessageDialog(this, "get out o' me swamp!", "Game Over", JOptionPane.YES_NO_OPTION);
-            System.exit(ABORT);
+            //System.exit(ABORT);
         } else{
+            this.player.loadImage();
             player.x = 100;
             player.y = 500;
             badGuy.x = 1280;

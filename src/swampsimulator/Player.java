@@ -28,19 +28,18 @@ public class Player{
     
     public Player(Game game){
         this.game = game;
-        loadImage();
+        //loadImage();
         System.out.println("New player");
     }
-     private void loadImage() {
+     public void loadImage() {
         
-        ImageIcon ii = new ImageIcon("src/gameArt/shrek.gif");
+        ImageIcon ii = new ImageIcon(game.characters[count]);
         image = ii.getImage(); 
         
         w = image.getWidth(null);
         h = image.getHeight(null);
     }
      public Image getImage() {
-        
         return image;
     }
     public void paint(Graphics2D g){

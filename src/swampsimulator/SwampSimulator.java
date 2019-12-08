@@ -21,9 +21,9 @@ public class SwampSimulator {
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
         lgn = new Login(this);
-        adv = new Adventure(this);
-        advpanel = new AdventurePanel();
-        game = new Game();
+        //////adv = new Adventure(this);
+        //////advpanel = new AdventurePanel();
+        //game = new Game();
 //        chr = new Character(this);
 
         ss.setSize(1200, 800);
@@ -87,7 +87,7 @@ public static void main(String args[]) throws InterruptedException, IOException 
 //        frame.setVisible(true);
 //        frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 //
-//        while (true){
+//        while (game.returnCount() < 3){
 //            game.move();
 //            game.repaint();
 //            Thread.sleep(10);
