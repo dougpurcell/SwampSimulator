@@ -17,24 +17,26 @@ import javax.imageio.ImageIO;
  * @author dougles
  */
 
-class Adventure extends JPanel implements ActionListener{
+class Adventure extends JPanel implements ActionListener {
+
+    protected SwampSimulator gui;
 
     private JButton itemButton;
     protected JLabel title;
     protected JLabel description;
     protected JButton addToCart;
+    protected JButton closePanel;
 
-    private SwampSimulator gui;
 
-    protected JPanel adventuresDetails;
+    JFrame popup;
 
     public Adventure(SwampSimulator ss) throws IOException {
 
         gui = ss;
 
         setBackground(new Color(245, 245, 245));
-        setSize(1200,1200);
-        setLocation(10,10);
+        setSize(800,800);
+        setLocation(0,0);
 
         for(int i = 1; i <= 6; i++) { // Fake DB; with db would be something like length of array of DB objects
             BufferedImage thumbnail = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // swap to link from database, based on location.
@@ -43,7 +45,6 @@ class Adventure extends JPanel implements ActionListener{
             itemButton.setBorder(BorderFactory.createEmptyBorder());
             itemButton.setSize(200, 200);
             itemButton.addActionListener(this);
-
             add(itemButton);
 
         }
@@ -51,9 +52,6 @@ class Adventure extends JPanel implements ActionListener{
         FlowLayout itemGrid = new FlowLayout();
         setLayout(itemGrid);
         setVisible(true);
-//    BufferedImage thumbnailImage = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg"));
-//    JLabel popupthumbnail = new JLabel(new ImageIcon(thumbnailImage)); // to pull from db.
-//    adventuresDetails.add(popupthumbnail);
 
 //    adventuresDetails.setSize(600,400);
 //
@@ -70,16 +68,23 @@ class Adventure extends JPanel implements ActionListener{
 
     }
 
+    public void openPopup() {
 
+        popup = new JFrame();
+        popup.setSize(400,400);
+        popup.setTitle("");
+        popup.setVisible(true);
 
+    }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == itemButton) {
             System.out.print("worked");
-//            gui.changePanel("adventure", "advpanel");
-            adventuresDetails.setVisible(true);
+            openPopup();
+//            gui.changePanel("adventure", "adminInventory");
+//            adventuresDetails.setVisible(true);
         }
         repaint();
     }

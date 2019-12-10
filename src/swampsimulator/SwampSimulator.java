@@ -11,7 +11,7 @@ public class SwampSimulator {
     private JFrame ss;
     private Login lgn;
     private Adventure adv;
-    private AdventurePanel advPanel;
+    private AdminInventory adminInventory;
 
 //    private Character chr;
 //    private CharacterPanel chrpanel;
@@ -22,8 +22,9 @@ public class SwampSimulator {
         ss = new JFrame("Swamp Simulator");
         lgn = new Login(this);
         adv = new Adventure(this);
-//        advPanel = new AdventurePanel(this);
-        //game = new Game();
+        adminInventory = new AdminInventory(this);
+
+//        game = new Game();
 //        chr = new Character(this);
 
         ss.setSize(1200, 800);
@@ -32,13 +33,14 @@ public class SwampSimulator {
         ss.setVisible(true);
         ss.add(lgn);
     }
+
     public void changePanel (String Old, String New) {
         if (Old.equals("login")) {
             ss.remove(lgn);
         }
-        else if (Old.equals("adventure")) {
-            ss.remove(adv);
-        }
+//        else if (Old.equals("adventure")) {
+//            ss.remove(adv);
+//        }
 
 //        else if (Old.equals("character")){
 //            ss.remove(chr);
@@ -46,7 +48,6 @@ public class SwampSimulator {
 //        else (Old.equals("order")){
 //            ss.remove(odr);
 //        }
-
         if (New.equals("adventure")){
             ss.add(adv);
         }
@@ -59,7 +60,6 @@ public class SwampSimulator {
 //        else (New.equals("game")){
 //            ss.add(game);
 //        }
-
         ss.validate();
         ss.pack();
 

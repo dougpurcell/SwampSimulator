@@ -74,6 +74,8 @@ public class Login extends JPanel implements ActionListener {
         loginButton.addActionListener(this);
         add(loginButton);
 
+        FlowLayout itemGrid = new FlowLayout();
+        setLayout(itemGrid);
 
         setVisible(true);
     }
@@ -84,6 +86,5 @@ public class Login extends JPanel implements ActionListener {
         if (source == loginButton) {
             gui.changePanel("login", "adventure");
         }
-        repaint();
     }
 }
