@@ -17,16 +17,16 @@ import javax.imageio.ImageIO;
  * @author dougles
  */
 
-class Adventure extends JPanel implements ActionListener {
+public class Adventure extends JPanel implements ActionListener {
 
     protected SwampSimulator gui;
 
     private JButton itemButton;
-    protected JLabel title;
-    protected JLabel description;
-    protected JButton addToCart;
-    protected JButton closePanel;
 
+    protected JLabel title;
+//    protected JLabel description;
+//    protected JButton addToCart;
+//    protected JButton closePanel;
 
     JFrame popup;
 
@@ -36,7 +36,6 @@ class Adventure extends JPanel implements ActionListener {
 
         setBackground(new Color(245, 245, 245));
         setSize(800,800);
-        setLocation(0,0);
 
         for(int i = 1; i <= 6; i++) { // Fake DB; with db would be something like length of array of DB objects
             BufferedImage thumbnail = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // swap to link from database, based on location.
@@ -45,12 +44,11 @@ class Adventure extends JPanel implements ActionListener {
             itemButton.setBorder(BorderFactory.createEmptyBorder());
             itemButton.setSize(200, 200);
             itemButton.addActionListener(this);
+            itemButton.setLocation(200,200);
             add(itemButton);
 
         }
 
-        FlowLayout itemGrid = new FlowLayout();
-        setLayout(itemGrid);
         setVisible(true);
 
 //    adventuresDetails.setSize(600,400);

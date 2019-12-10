@@ -8,9 +8,6 @@ package swampsimulator;
 import javax.swing.*; 
 import java.awt.*; 
 import java.awt.event.*;
-import java.io.IOException;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 
 /**
  * @author dougbug
@@ -73,9 +70,6 @@ public class Login extends JPanel implements ActionListener {
         loginButton.setLocation(100,200);
         loginButton.addActionListener(this);
         add(loginButton);
-
-        FlowLayout itemGrid = new FlowLayout();
-        setLayout(itemGrid);
 
         setVisible(true);
     }
