@@ -11,7 +11,7 @@ public class SwampSimulator {
     private JFrame ss;
     private Login lgn;
     private Adventure adv;
-    private AdventurePanel advpanel;
+    private AdventurePanel advPanel;
 
 //    private Character chr;
 //    private CharacterPanel chrpanel;
@@ -21,8 +21,8 @@ public class SwampSimulator {
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
         lgn = new Login(this);
-        //////adv = new Adventure(this);
-        //////advpanel = new AdventurePanel();
+        adv = new Adventure(this);
+//        advPanel = new AdventurePanel(this);
         //game = new Game();
 //        chr = new Character(this);
 
@@ -49,9 +49,6 @@ public class SwampSimulator {
 
         if (New.equals("adventure")){
             ss.add(adv);
-        }
-        else if (New.equals("advpanel")) {
-            ss.add(advpanel);
         }
 //        else if (New.equals("character")){
 //            ss.add(chr);

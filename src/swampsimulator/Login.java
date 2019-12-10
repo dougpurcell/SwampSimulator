@@ -74,6 +74,7 @@ public class Login extends JPanel implements ActionListener {
         loginButton.addActionListener(this);
         add(loginButton);
 
+
         setVisible(true);
     }
     
