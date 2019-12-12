@@ -23,11 +23,11 @@ public class Adventure extends JPanel implements ActionListener {
 
     private JButton itemButton;
 
-    protected JLabel title;
-    protected JTextArea description;
-    protected JButton addToCart;
-
     JFrame popup;
+    protected JLabel ptitle;
+    protected JTextArea pdescription;
+    protected JButton paddToCart;
+    protected JLabel pImage;
 
     public Adventure(SwampSimulator ss) throws IOException {
 
@@ -36,7 +36,7 @@ public class Adventure extends JPanel implements ActionListener {
         setBackground(new Color(245, 245, 245));
         setSize(800,800);
 
-        for(int i = 1; i <= 6; i++) { // Fake DB; with db would be something like length of array of DB objects
+        for(int i = 1; i <= 6; i++) { // TODO: Fake DB; with db would be something like length of array of DB objects
             BufferedImage thumbnail = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // swap to link from database, based on location.
 
             itemButton = new JButton( new ImageIcon(thumbnail));
@@ -52,48 +52,71 @@ public class Adventure extends JPanel implements ActionListener {
 
     }
 
-    public void openPopup() {
-
+    public void openPopup() throws IOException {
+    // TODO: arrangement styling weirdly not doing the right stuff.
         popup = new JFrame();
-        setSize(650,400);
-        setLocation(400,400);
+        popup.setSize(650,400);
+        popup.setLocation(400,400);
         popup.setTitle("Adventure Popup");
 
-        title = new JLabel("Shrek"); // swap to link from database, based on location.
-        title.setFont(new Font("Helvetica", Font.PLAIN, 30));
-        title.setForeground(new java.awt.Color(198,213,136));
-        title.setSize(100,30);
-        title.setLocation(250,50);
-        popup.add(title);
+        JPanel p = new JPanel();
+        p.setSize(650,400);
+        p.setVisible(true);
 
-//        description = new JTextArea("longer description of adventure. this is some really interesting stuff.");// swap to link from database, based on location.
-//        description.setFont(new Font("Helvetica", Font.PLAIN, 14));
-//        description.setLineWrap(true);
-//        description.setWrapStyleWord(true);
-//        description.setSize(50, 50);
-//        description.setLocation(250,100);
-//        popup.add(description);
+        BufferedImage pThumb = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // TODO: swap to link from database, based on location.
 
-        addToCart = new JButton("Add To Cart");
-        addToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
-        addToCart.setBackground(Color.gray);
-        addToCart.setSize(90,35);
-//        addToCart.setLocation(100,200);
-        addToCart.addActionListener(this);
-        popup.add(addToCart);
+        pImage = new JLabel(new ImageIcon(pThumb));
+        pImage.setSize(200,200);
+        pImage.setLocation(10,10);
+        p.add(pImage);
 
+        ptitle = new JLabel("Shrek"); // swap to link from database, based on location.
+        ptitle.setFont(new Font("Helvetica", Font.PLAIN, 30));
+        ptitle.setForeground(new java.awt.Color(198,213,136));
+        ptitle.setSize(100,30);
+        ptitle.setLocation(250,50);
+        p.add(ptitle);
+
+        pdescription = new JTextArea("longer description of adventure. this is some really interesting stuff.");// swap to link from database, based on location.
+        pdescription.setFont(new Font("Helvetica", Font.PLAIN, 14));
+        pdescription.setLineWrap(true);
+        pdescription.setWrapStyleWord(true);
+        pdescription.setSize(50, 50);
+        pdescription.setLocation(250,100);
+        p.add(pdescription);
+
+        paddToCart = new JButton("Add To Cart");
+        paddToCart.setSize(25,25);
+        paddToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
+        paddToCart.setBackground(Color.gray);
+        paddToCart.setLocation(250,300);
+        paddToCart.addActionListener(this);
+        p.add(paddToCart);
+
+        popup.add(p);
         popup.setVisible(true);
 
+    }
+    public void closePopup(){
+        popup.setVisible(false);
     }
 
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
         if (source == itemButton) {
-            System.out.print("worked");
-            openPopup();
-//            gui.changePanel("adventure", "adminInventory");
-//            adventuresDetails.setVisible(true);
+            try {
+                openPopup();
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        if (source == paddToCart) {
+            // TODO: add event for adding item to Order Class.
+
+            closePopup();
+            gui.changePanel("adventure", "character");
         }
         repaint();
     }
