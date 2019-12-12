@@ -24,9 +24,8 @@ public class Adventure extends JPanel implements ActionListener {
     private JButton itemButton;
 
     protected JLabel title;
-//    protected JLabel description;
-//    protected JButton addToCart;
-//    protected JButton closePanel;
+    protected JTextArea description;
+    protected JButton addToCart;
 
     JFrame popup;
 
@@ -51,26 +50,37 @@ public class Adventure extends JPanel implements ActionListener {
 
         setVisible(true);
 
-//    adventuresDetails.setSize(600,400);
-//
-//    title = new JLabel("Shrek"); // swap to link from database, based on location.
-//    title.setFont(new Font("Helvetica", Font.PLAIN, 30));
-//    title.setForeground(new java.awt.Color(198,213,136));
-//    title.setSize(400, 30);
-//
-//    adventuresDetails.add(title);
-//
-//    description = new JLabel("longer description of adventure. this is some really interesting stuff."); // swap to link from database, based on location.
-//    description.setFont(new Font("Helvetica", Font.PLAIN, 14));
-//    adventuresDetails.add(description);
-
     }
 
     public void openPopup() {
 
         popup = new JFrame();
-        popup.setSize(400,400);
-        popup.setTitle("");
+        popup.setSize(650,400);
+        popup.setLocation(400,400);
+        popup.setTitle("Adventure Popup");
+
+        title = new JLabel("Shrek"); // swap to link from database, based on location.
+        title.setFont(new Font("Helvetica", Font.PLAIN, 30));
+        title.setForeground(new java.awt.Color(198,213,136));
+        title.setSize(200,30);
+        title.setLocation(250,25);
+        popup.add(title);
+
+        description = new JTextArea("longer description of adventure. this is some really interesting stuff.");// swap to link from database, based on location.
+        description.setFont(new Font("Helvetica", Font.PLAIN, 14));
+        description.setLineWrap(true);
+        description.setWrapStyleWord(true);
+        description.setSize(300, 300);
+        description.setLocation(250,75);
+        popup.add(description);
+
+//        addToCart = new JButton("Add To Cart");
+//        addToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
+//        addToCart.setSize(90,35);
+//        addToCart.setLocation(100,200);
+//        addToCart.addActionListener(this);
+//        popup.add(addToCart);
+
         popup.setVisible(true);
 
     }

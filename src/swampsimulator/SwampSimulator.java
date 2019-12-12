@@ -27,6 +27,7 @@ public class SwampSimulator {
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
         ss.add(lgn);
+        adv.openPopup();
 
     }
 
