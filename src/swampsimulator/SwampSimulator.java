@@ -65,7 +65,13 @@ public static void main(String args[]) throws InterruptedException, IOException 
 //            game.move();
 //            game.repaint();
 //            Thread.sleep(10);
-//
+//          If (game.returnCount() = 4{
+//                  string soundname = "gameover.wav";
+//                  AudioInputStream audioinputstream = AudioSystem.getAudioInputStream(new File(soundname).getAbsolutePath);
+//                  Clip clip = AudioSystem.getClip();
+//                  clip.open(audioinputstream);
+//                  clip.start();
+//                }
 //        }
     }
 
