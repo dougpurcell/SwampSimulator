@@ -20,6 +20,7 @@ public class badGuy {
     private static final int WIDTH = 30;
     private static final int HEIGHT = 150;
     private Image image;
+    private Image background;
     private int w, h;
     
     private Game game;
@@ -30,9 +31,10 @@ public class badGuy {
     }
     private void loadImage() {
         
-        ImageIcon ii = new ImageIcon("src/gameArt/badguy.png");
+        ImageIcon ii = new ImageIcon("src/gameArt/characters/badguy.png");
+        ImageIcon bg = new ImageIcon(game.background);
         image = ii.getImage(); 
-        
+        background = bg.getImage();
         w = image.getWidth(null);
         h = image.getHeight(null);
     }
@@ -45,14 +47,22 @@ public class badGuy {
         }
         
     }
+    
+    // returns background image determined by selected adventure
+    public Image getBackground(){
+        return background;
+    }
+    // returns bad guy character art image
     public Image getImage() {
-        
         return image;
     }
     public void paint(Graphics2D g) {
         //g.setColor();
-        //g.fillRect(x, y, WIDTH, HEIGHT);
+        //g.fillRect(x, y, WIDTH, HEIGHT)
+        //g.drawImage(getBackground(),100,0,game);
+        g.drawImage(getBackground(), 0, 0, 1200, 800, game);
         g.drawImage(getImage(), x, y, game);
+        
         g.drawLine(0, 530, 1280, 530);
     }
     
