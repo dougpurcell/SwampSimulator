@@ -91,8 +91,8 @@ public class SwampSimulator {
 public static void main(String args[]) throws InterruptedException, IOException, LineUnavailableException, UnsupportedAudioFileException {
 
     SwampSimulator ss = new SwampSimulator();
-//    ss.playGame(); // moved to a method CAMERON
-    ss.initialize();
+    ss.playGame(); // moved to a method CAMERON
+//    ss.initialize();
 
     }
 

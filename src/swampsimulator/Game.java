@@ -37,7 +37,13 @@ public class Game extends JPanel {
     String characters[] = new String[]{"src/gameArt/characters/god mother.gif","src/gameArt/characters/pinocchio.gif","src/gameArt/characters/wolf.gif","src/gameArt/characters/gingerbread man.gif"};
     
     // string that holds the background image, will need to come from the order class
-    final String background = "src/gameArt/adventures/shrek 1 background.png";
+//    final String background = "src/gameArt/adventures/shrek 1 background.png";
+//    final String background = "src/gameArt/adventures/shrek 2 background.png";
+//    final String background = "src/gameArt/adventures/shrek 3 background.png";
+//    final String background = "src/gameArt/adventures/shrek 4 background.png";
+//    final String background = "src/gameArt/adventures/shrek the halls.png";
+    final String background = "src/gameArt/adventures/scared shrekless.png";
+    
     public Game(){
         
         // adds keyListeners in the game constructor class for key typed, pressed, and released
@@ -107,7 +113,8 @@ public class Game extends JPanel {
     public void gameOver(int count) throws FileNotFoundException, IOException, InterruptedException{
         if (count > 3){
             // string containing the filepath of the sound
-            String soundname = "G:\\Fall 2019\\IST 311\\project\\swampsimulator\\assets\\audio\\sharpesttool.wav";
+            //String soundname = "G:\\Fall 2019\\IST 311\\project\\New Folder\\swampsimulator\\assets\\audio\\sharpesttool.wav";
+            String soundname = "src/audio/sharpesttool.wav";
             
             // new input stream for game over sound
             InputStream in = new FileInputStream(soundname);
@@ -125,7 +132,8 @@ public class Game extends JPanel {
             System.exit(ABORT);
         } else{
             // string containing the filepath of the hit sound
-            String hitSound = "G:\\Fall 2019\\IST 311\\project\\swampsimulator\\assets\\audio\\heh.wav";
+            //String hitSound = "G:\\Fall 2019\\IST 311\\project\\New Folder\\swampsimulator\\assets\\audio\\heh.wav";
+            String hitSound = "src/audio/heh.wav";
             
             // using the input stream for hit sount
             InputStream in = new FileInputStream(hitSound);

@@ -121,7 +121,8 @@ public class Player{
             ya = -3;
             
             // string containing the filepath of the sound
-            String soundname = "G:\\Fall 2019\\IST 311\\project\\swampsimulator\\assets\\audio\\brrringheh.wav";
+            //String soundname = "G:\\Fall 2019\\IST 311\\project\\New Folder\\swampsimulator\\assets\\audio\\brrringheh.wav";
+            String soundname = "src/audio/brrringheh.wav";
             
             // new input stream for game over sound
             InputStream in = new FileInputStream(soundname);
