@@ -3,8 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="c4592f88-c152-4351-b623-3c44f00620a4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nbproject/private/private.properties" beforeDir="false" afterPath="$PROJECT_DIR$/nbproject/private/private.properties" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/SwampSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/SwampSimulator.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swampsimulator/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/Adventure.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/swampsimulator/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -16,24 +17,24 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1605">
-              <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+            <state relative-caret-position="268">
+              <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
               <folding>
                 <element signature="imports" expanded="true" />
-                <marker date="1576553344919" expanded="true" signature="2719:2790" ph="..." />
+                <marker date="1576555747285" expanded="true" signature="2480:2551" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="290">
-              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+            <state relative-caret-position="355">
+              <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -72,8 +73,8 @@
         <option value="$PROJECT_DIR$/src/swampsimulator/AdminInventory.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Login.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Character.java" />
-        <option value="$PROJECT_DIR$/src/swampsimulator/Adventure.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" />
+        <option value="$PROJECT_DIR$/src/swampsimulator/Adventure.java" />
       </list>
     </option>
   </component>
@@ -117,7 +118,7 @@
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576553472416" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576555750049" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -176,12 +177,12 @@
       <workItem from="1576184252048" duration="1728000" />
       <workItem from="1576550801888" duration="78000" />
       <workItem from="1576551060077" duration="17000" />
-      <workItem from="1576551086782" duration="1976000" />
+      <workItem from="1576551086782" duration="3993000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="37056000" />
+    <option name="totallyTimeSpent" value="39073000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -196,7 +197,7 @@
     <frame x="221" y="23" width="1459" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20677488" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.20677488" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -205,7 +206,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22352941" />
+      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22352941" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989305" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -388,23 +389,23 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1605">
-          <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+        <state relative-caret-position="355">
+          <caret line="54" column="9" lean-forward="true" selection-start-line="54" selection-start-column="9" selection-end-line="54" selection-end-column="9" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1576553344919" expanded="true" signature="2719:2790" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="290">
-          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+        <state relative-caret-position="268">
+          <caret line="68" column="22" lean-forward="true" selection-start-line="68" selection-start-column="22" selection-end-line="68" selection-end-column="22" />
           <folding>
             <element signature="imports" expanded="true" />
+            <marker date="1576555747285" expanded="true" signature="2480:2551" ph="..." />
           </folding>
         </state>
       </provider>

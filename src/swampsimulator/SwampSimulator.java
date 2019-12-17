@@ -35,7 +35,7 @@ public class SwampSimulator {
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
         ss.add(lgn);
-        
+
 //        ss.add(adminInv); // Cam uncomment this.
 
     }

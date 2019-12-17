@@ -56,24 +56,16 @@ public class Adventure extends JPanel implements ActionListener {
     // TODO: arrangement styling weirdly not doing the right stuff.
         popup = new JFrame("Adventure Popup");
         popup.setSize(650,400);
-//        popup.setLocation(400,400);
 
         JPanel p = new JPanel();
-        p.setSize(650,400);
-        p.setVisible(true);
 
         BufferedImage pThumb = ImageIO.read(new File("assets/img/shrekmoviethumb.jpg")); // TODO: swap to link from database, based on location.
-
-        pImage = new JLabel(new ImageIcon(pThumb));
-        pImage.setSize(200,200);
-        pImage.setLocation(10,10);
-        p.add(pImage);
 
         ptitle = new JLabel("Shrek"); // swap to link from database, based on location.
         ptitle.setFont(new Font("Helvetica", Font.PLAIN, 30));
         ptitle.setForeground(new java.awt.Color(198,213,136));
         ptitle.setSize(100,30);
-        ptitle.setLocation(250,50);
+        ptitle.setLocation(15,15);
         p.add(ptitle);
 
         pdescription = new JTextArea("longer description of adventure. this is some really interesting stuff.");// swap to link from database, based on location.
@@ -92,6 +84,12 @@ public class Adventure extends JPanel implements ActionListener {
         paddToCart.addActionListener(this);
         p.add(paddToCart);
 
+        pImage = new JLabel(new ImageIcon(pThumb));
+        pImage.setSize(200,200);
+        pImage.setLocation(10,10);
+        p.add(pImage);
+        GridLayout x = new GridLayout(4,2);
+        popup.setLayout(x);
         popup.add(p);
         popup.setVisible(true);
 
