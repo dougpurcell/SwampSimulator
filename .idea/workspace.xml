@@ -3,6 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="c4592f88-c152-4351-b623-3c44f00620a4" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swampsimulator/Adventure.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/Adventure.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swampsimulator/Character.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/Character.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
@@ -13,47 +15,33 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <splitter split-orientation="horizontal" split-proportion="0.5">
-      <split-first>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="484">
-                  <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-          <file pinned="false" current-in-tab="false">
-            <entry file="file://$PROJECT_DIR$/src/swampsimulator/Game.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="330">
-                  <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-first>
-      <split-second>
-        <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-          <file pinned="false" current-in-tab="true">
-            <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
-              <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="231">
-                  <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                    <marker date="1576185988303" expanded="true" signature="2743:2814" ph="..." />
-                  </folding>
-                </state>
-              </provider>
-            </entry>
-          </file>
-        </leaf>
-      </split-second>
-    </splitter>
+    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
+      <file pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="1605">
+              <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+              <folding>
+                <element signature="imports" expanded="true" />
+                <marker date="1576553344919" expanded="true" signature="2719:2790" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="290">
+              <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+    </leaf>
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -80,10 +68,10 @@
         <option value="$PROJECT_DIR$/src/old/Character.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Adventures.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/ItemPanel.java" />
-        <option value="$PROJECT_DIR$/src/swampsimulator/Character.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/AdventurePanel.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/AdminInventory.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Login.java" />
+        <option value="$PROJECT_DIR$/src/swampsimulator/Character.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Adventure.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" />
       </list>
@@ -99,12 +87,37 @@
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
     </navigator>
-    <panes />
+    <panes>
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
+      <pane id="ProjectPane">
+        <subPane>
+          <expand>
+            <path>
+              <item name="SwampSimulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SwampSimulator" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SwampSimulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SwampSimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="SwampSimulator" type="b2602c69:ProjectViewProjectNode" />
+              <item name="SwampSimulator" type="462c0819:PsiDirectoryNode" />
+              <item name="src" type="462c0819:PsiDirectoryNode" />
+              <item name="swampsimulator" type="462c0819:PsiDirectoryNode" />
+            </path>
+          </expand>
+          <select />
+        </subPane>
+      </pane>
+    </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576551321742" />
+    <property name="com.android.tools.idea.instantapp.provision.ProvisionBeforeRunTaskProvider.myTimeStamp" value="1576553472416" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="/usr/local/bin/node" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="project.structure.last.edited" value="Modules" />
@@ -163,12 +176,12 @@
       <workItem from="1576184252048" duration="1728000" />
       <workItem from="1576550801888" duration="78000" />
       <workItem from="1576551060077" duration="17000" />
-      <workItem from="1576551086782" duration="231000" />
+      <workItem from="1576551086782" duration="1976000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="35311000" />
+    <option name="totallyTimeSpent" value="37056000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -183,7 +196,7 @@
     <frame x="221" y="23" width="1459" height="1027" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info content_ui="combo" id="Project" order="0" weight="0.20677488" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.20677488" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -192,7 +205,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22352941" />
+      <window_info anchor="bottom" id="Run" order="2" visible="true" weight="0.22352941" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989305" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -281,16 +294,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Character.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="345">
-          <caret line="34" column="25" selection-start-line="34" selection-start-column="25" selection-end-line="34" selection-end-column="25" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///Library/Java/JavaVirtualMachines/jdk1.8.0_144.jdk/Contents/Home/src.zip!/java/awt/event/ActionListener.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="315">
@@ -344,13 +347,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="330">
-          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/swampsimulator/Login.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="285">
@@ -361,21 +357,55 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="231">
-          <caret line="38" column="46" selection-start-line="38" selection-start-column="46" selection-end-line="38" selection-end-column="46" />
+        <state relative-caret-position="330">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/GameRecord.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="274">
+          <caret line="61" column="21" lean-forward="true" selection-start-line="61" selection-start-column="21" selection-end-line="61" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Database.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-286">
+          <caret line="51" column="9" lean-forward="true" selection-start-line="51" selection-start-column="9" selection-end-line="51" selection-end-column="9" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Character.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-11">
+          <caret line="79" column="36" lean-forward="true" selection-start-line="79" selection-start-column="36" selection-end-line="79" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
-            <marker date="1576185988303" expanded="true" signature="2743:2814" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Adventure.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1605">
+          <caret line="113" column="32" lean-forward="true" selection-start-line="113" selection-start-column="32" selection-end-line="113" selection-end-column="32" />
+          <folding>
+            <element signature="imports" expanded="true" />
+            <marker date="1576553344919" expanded="true" signature="2719:2790" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="484">
-          <caret line="76" column="45" selection-start-line="76" selection-start-column="45" selection-end-line="76" selection-end-column="45" />
+        <state relative-caret-position="290">
+          <caret line="37" column="8" selection-start-line="37" selection-start-column="8" selection-end-line="37" selection-end-column="8" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

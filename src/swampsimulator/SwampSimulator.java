@@ -19,22 +19,24 @@ public class SwampSimulator {
     private JFrame ss;
     private Login lgn;
     private Adventure adv;
-
+    private Character chr;
     protected Game game;
+    private AdminInventory adminInv;
 
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
         lgn = new Login(this);
         adv = new Adventure(this);
-
-//        game = new Game();
+        chr = new Character(this);
+        adminInv = new AdminInventory(this);
 
         ss.setSize(1200, 800);
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
         ss.add(lgn);
-//        adv.openPopup();
+        
+//        ss.add(adminInv); // Cam uncomment this.
 
     }
 
@@ -44,6 +46,12 @@ public class SwampSimulator {
         }
         if (New.equals("adventure")){
             ss.add(adv);
+        }
+        if (Old.equals("adventure")) {
+            ss.remove(adv);
+        }
+        if (New.equals("character")){
+            ss.add(chr);
         }
         ss.validate();
 
@@ -75,7 +83,7 @@ public class SwampSimulator {
 public static void main(String args[]) throws InterruptedException, IOException, LineUnavailableException, UnsupportedAudioFileException {
 
     SwampSimulator ss = new SwampSimulator();
-//    ss.playGame(); // moved to a method CAMERONNNNNN
+//    ss.playGame(); // moved to a method CAMERON
     ss.initialize();
 
     }

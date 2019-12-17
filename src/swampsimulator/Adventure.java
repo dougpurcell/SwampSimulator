@@ -54,10 +54,9 @@ public class Adventure extends JPanel implements ActionListener {
 
     public void openPopup() throws IOException {
     // TODO: arrangement styling weirdly not doing the right stuff.
-        popup = new JFrame();
+        popup = new JFrame("Adventure Popup");
         popup.setSize(650,400);
-        popup.setLocation(400,400);
-        popup.setTitle("Adventure Popup");
+//        popup.setLocation(400,400);
 
         JPanel p = new JPanel();
         p.setSize(650,400);
