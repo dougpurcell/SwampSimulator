@@ -21,7 +21,7 @@ public class SwampSimulator {
     private Adventure adv;
     private Character chr;
     protected Game game;
-    private AdminInventory adminInv;
+    public AdminInventory adminInv;
 
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
@@ -34,9 +34,9 @@ public class SwampSimulator {
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
-        ss.add(lgn);
+//        ss.add(lgn);
 
-//        ss.add(adminInv); // Cam uncomment this.
+        ss.add(adminInv); // Cam uncomment this.
 
     }
 

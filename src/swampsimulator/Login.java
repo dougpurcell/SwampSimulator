@@ -47,7 +47,7 @@ public class Login extends JPanel implements ActionListener {
 
         username = new JTextField();
         username.setFont(new Font("Helvetica", Font.PLAIN, 12));
-        username.setSize(190, 20);
+        username.setSize(new Dimension(190, 20));
         username.setLocation(200, 100);
         add(username);
 
