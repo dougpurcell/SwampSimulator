@@ -34,9 +34,9 @@ public class SwampSimulator {
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
-//        ss.add(lgn);
+        ss.add(lgn);
 
-        ss.add(adminInv); // Cam uncomment this.
+//        ss.add(adminInv); // Cam uncomment this.
 
     }
 
