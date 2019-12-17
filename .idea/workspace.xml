@@ -1,7 +1,14 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="c4592f88-c152-4351-b623-3c44f00620a4" name="Default Changelist" comment="" />
+    <list default="true" id="c4592f88-c152-4351-b623-3c44f00620a4" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/Game$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/Game$1.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/Game.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/Game.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/Player.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/Player.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/SwampSimulator.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/SwampSimulator.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/badGuy.class" beforeDir="false" afterPath="$PROJECT_DIR$/out/production/SwampSimulator/swampsimulator/badGuy.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" afterDir="false" />
+    </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -16,11 +23,8 @@
           <file pinned="false" current-in-tab="true">
             <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="465">
-                  <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
-                  <folding>
-                    <element signature="imports" expanded="true" />
-                  </folding>
+                <state relative-caret-position="482">
+                  <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
                 </state>
               </provider>
             </entry>
@@ -41,8 +45,8 @@
           <file pinned="false" current-in-tab="false">
             <entry file="file://$PROJECT_DIR$/src/swampsimulator/Game.java">
               <provider selected="true" editor-type-id="text-editor">
-                <state relative-caret-position="285">
-                  <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
+                <state relative-caret-position="480">
+                  <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
                 </state>
               </provider>
             </entry>
@@ -109,8 +113,8 @@
         <option value="$PROJECT_DIR$/src/swampsimulator/AdventurePanel.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/AdminInventory.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Login.java" />
-        <option value="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" />
         <option value="$PROJECT_DIR$/src/swampsimulator/Adventure.java" />
+        <option value="$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java" />
       </list>
     </option>
   </component>
@@ -211,11 +215,12 @@
       <workItem from="1576007966681" duration="7538000" />
       <workItem from="1576180980845" duration="1825000" />
       <workItem from="1576184252048" duration="1728000" />
+      <workItem from="1576550801888" duration="78000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="34985000" />
+    <option name="totallyTimeSpent" value="35063000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -239,7 +244,7 @@
       <window_info id="Favorites" order="6" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
       <window_info anchor="bottom" id="Find" order="1" weight="0.32941177" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.22352941" />
+      <window_info anchor="bottom" id="Run" order="2" weight="0.22352941" />
       <window_info anchor="bottom" id="Debug" order="3" weight="0.3989305" />
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
@@ -328,13 +333,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Game.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="285">
-          <caret line="30" column="13" selection-start-line="30" selection-start-column="13" selection-end-line="30" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/swampsimulator/Character.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="345">
@@ -398,13 +396,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Login.java">
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Game.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
+        <state relative-caret-position="480">
+          <caret line="43" column="13" selection-start-line="43" selection-start-column="13" selection-end-line="43" selection-end-column="13" />
         </state>
       </provider>
     </entry>
@@ -419,13 +414,20 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/Login.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="31" column="19" selection-start-line="31" selection-start-column="19" selection-end-line="31" selection-end-column="19" />
+        <state relative-caret-position="255">
+          <caret line="23" column="36" selection-start-line="23" selection-start-column="36" selection-end-line="23" selection-end-column="36" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/swampsimulator/SwampSimulator.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="482">
+          <caret line="49" column="5" selection-start-line="49" selection-start-column="5" selection-end-line="49" selection-end-column="5" />
         </state>
       </provider>
     </entry>
