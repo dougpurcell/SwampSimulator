@@ -49,14 +49,7 @@ public class SwampSimulator {
 
     }
 
-public static void main(String args[]) throws InterruptedException, IOException, LineUnavailableException, UnsupportedAudioFileException {
-
-    SwampSimulator ss = new SwampSimulator();
-    ss.initialize();
-
-        /* C A M E R O N:
-            uncomment your shit to work on the game bro.
-        */
+    public void playGame() throws InterruptedException, IOException {
 
 //         this would be the shit connected to the "checkout" button
         JFrame frame = new JFrame("me swamp");
@@ -72,10 +65,19 @@ public static void main(String args[]) throws InterruptedException, IOException,
             game.move();
             game.repaint();
             System.out.println(game.returnCount());
-            
-          
+
+
             Thread.sleep(10);
         }
+
+    }
+
+public static void main(String args[]) throws InterruptedException, IOException, LineUnavailableException, UnsupportedAudioFileException {
+
+    SwampSimulator ss = new SwampSimulator();
+//    ss.playGame(); // moved to a method CAMERONNNNNN
+    ss.initialize();
+
     }
 
 }
