@@ -21,6 +21,7 @@ public class SwampSimulator {
     private Adventure adv;
     private Character chr;
     protected Game game;
+    private Order ord;
     public AdminInventory adminInv;
 
     public void initialize() throws IOException {
@@ -28,6 +29,7 @@ public class SwampSimulator {
         lgn = new Login(this);
         adv = new Adventure(this);
         chr = new Character(this);
+        ord = new Order(this);
         adminInv = new AdminInventory(this);
 
         ss.setSize(1200, 800);
@@ -50,8 +52,14 @@ public class SwampSimulator {
         if (Old.equals("adventure")) {
             ss.remove(adv);
         }
-        if (New.equals("character")){
+        if (New.equals("character")) {
             ss.add(chr);
+        }
+        if (Old.equals("character")) {
+            ss.remove(chr);
+        }
+        if (New.equals("order")){
+            ss.add(ord);
         }
         ss.validate();
 

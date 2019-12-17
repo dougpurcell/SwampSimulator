@@ -99,7 +99,7 @@ public class Character extends JPanel implements ActionListener {
                 e1.printStackTrace();
             }
         }
-        if (source == chrImage) {
+        if (source == chraddToCart) {
             // TODO: add event for adding item to Order Class.
 
             closePopup();
