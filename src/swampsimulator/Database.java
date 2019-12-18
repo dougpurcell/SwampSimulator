@@ -16,7 +16,8 @@ public class Database {
 //Declaration of variables    
 //String myConnectString = 
 //     "jdbc:ucanaccess://D:/IST 311/SwampSimulator-master/ShrekSim.accdb";
-String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New folder/swampsimulator/ShrekSim.accdb";
+//String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New folder/swampsimulator/ShrekSim.accdb";
+String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IST-311_OOD-SoftwareDev/MasterContenderProject/SwampSimulator/ShrekSim.accdb";
 //createTable() drops the current table and creates a new one
     public void createTable() {
         
