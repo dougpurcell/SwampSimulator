@@ -50,10 +50,9 @@ public class SwampSimulator {
         if (New.equals("admin")) {
             ss.add(adminInv);
         }
-        if (New.equals("adventured")){
+        if (New.equals("adventure")){
             ss.add(adv);
         }
-
         if (Old.equals("adventure")) {
             ss.remove(adv);
         }
@@ -71,6 +70,8 @@ public class SwampSimulator {
         }
         if (New.equals("game")){
             ss.add(chr);
+        } if (Old.equals("checkout")) {
+            ss.remove(ord);
         }
         
         ss.validate();

@@ -20,6 +20,8 @@ import javax.imageio.ImageIO;
 public class Character extends JPanel implements ActionListener {
 
     protected SwampSimulator gui;
+    
+    private static int counter = 0;
 
     private JButton itemButton;
 
@@ -99,12 +101,17 @@ public class Character extends JPanel implements ActionListener {
                 e1.printStackTrace();
             }
         }
+
         if (source == chraddToCart) {
             // TODO: add event for adding item to Order Class.
-
             closePopup();
-            gui.changePanel("character", "order");
+            counter++;
         }
+        if (counter == 4) {
+            gui.changePanel("character", "order");
+
+        }
+        
         repaint();
     }
 

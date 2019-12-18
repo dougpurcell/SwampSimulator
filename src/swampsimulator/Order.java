@@ -194,7 +194,7 @@ public class Order extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void backActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_backActionPerformed
-        gui.changePanel("checkout", "adventure");// TODO add your handling code here:
+        gui.changePanel("checkout", "adventure");
     }//GEN-LAST:event_backActionPerformed
 
     private void payActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_payActionPerformed
