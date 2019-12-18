@@ -17,6 +17,8 @@ public class AdminInventory extends JPanel implements ActionListener {
     private JPanel ordPanel = new JPanel();
     private JPanel chartView = new JPanel();
     public String[][] charData = new String[12][6];
+    
+    
 public AdminInventory(SwampSimulator ss) {
         // assigns the jframe we're in
         gui = ss;
