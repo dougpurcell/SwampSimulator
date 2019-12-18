@@ -150,9 +150,9 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
           }
 
           stmt.close();
-
           con.close();
 
+           return gameArray;
        }
        // detect problems interacting with the database
       catch ( SQLException sqlException ) {

@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.Arrays;
 import javax.imageio.ImageIO;
 
 /**
@@ -20,20 +21,20 @@ import javax.imageio.ImageIO;
 public class Adventure extends JPanel implements ActionListener {
 
     protected SwampSimulator gui;
-
     private JButton itemButton;
+    
+//    Database myDB = new Database();
+//    GameRecord[] queryData = myDB.getQueryData();
 
     JFrame popup;
     protected JLabel ptitle;
     protected JTextArea pdescription;
     protected JButton paddToCart;
-    protected JLabel pImage;
 
-    private GameRecord advgame[] = new GameRecord[25];
-
-    private String advthumb;
 
     public Adventure(SwampSimulator ss) throws IOException {
+
+//        System.out.print(Arrays.toString(queryData));
 
         gui = ss;
 

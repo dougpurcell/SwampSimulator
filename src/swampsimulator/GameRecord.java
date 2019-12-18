@@ -11,14 +11,14 @@ package swampsimulator;
  */
 public class GameRecord {
     
-    private String adID;       // first name of Student
-    private String crID;        // last name of Student
-    private String adName;    // degree status of student
-    private String crName;           // student major
+    private String adID;       //  id of adventure
+    private String crID;        //  id of character
+    private String adName;    // name of adventure
+    private String crName;           // name of character
     private int adValue;
     private int crValue; // StudentID, (contains position of student in the Array within the Applet)
     
-    /** Creates a new instance of StudentRecord */
+    /** Creates a new instance of GameRecord */
     public GameRecord(String aId, String cId, String aName, int aValue, String cName, int cValue) {
         adID = aId;
         crID = cId;
