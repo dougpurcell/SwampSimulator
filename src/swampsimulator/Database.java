@@ -262,29 +262,90 @@ String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New fo
         }
         
         // initiate the order array
-        orderData = new String[orderCount][5];
+        chartData = new String[orderCount][4];
         
         // reset result set
-        rs = stmt.executeQuery("SELECT * FROM Order");
+        rs = stmt.executeQuery("SELECT Characters FROM Order");
         
         // reset order count variable for efficiency
         orderCount = 0;
         
         // write to the order array
         while (rs.next()){
-            orderData[orderCount][0] = rs.getString(5);
-            orderData[orderCount][1] = rs.getString(1);
-            orderData[orderCount][2] = rs.getString(2);
-            orderData[orderCount][3] = rs.getString(3);
-            orderData[orderCount][4] = rs.getString(4);
+            String[] characters = rs.getString(1).split(",");
+            
+            // writes to new array for counting, also trimming spaces
+            chartData[orderCount][0] = characters[0].trim();
+            chartData[orderCount][1] = characters[1].trim();
+            chartData[orderCount][2] = characters[2].trim();
+            chartData[orderCount][3] = characters[3].trim();
+            
+            // iterates through array
             orderCount++;
+        }
+        // array for calculating character counts
+        int[][] chCount = new int[12][2];
+        
+        // for each 
+        for (int i = 0; i < orderCount; i++){
+            for (int k = 0; k < 4; k++){
+                
+                // switch for counting
+                switch (chartData[i][k]) {
+                    case "Shrek":
+                        chCount[0][1] = chCount[0][1] + 1;
+                        break;
+                    case "Donkey":
+                        chCount[1][1] = chCount[1][1] + 1;
+                        break;
+                    case "Fiona":
+                        chCount[2][1] = chCount[2][1] + 1;
+                        break;
+                    case "Dragon":
+                        chCount[3][1] = chCount[3][1] + 1;
+                        break;
+                    case "Gingerbread Man":
+                        chCount[4][1] = chCount[0][1] + 1;
+                        break;
+                    case "Puss in Boots":
+                        chCount[5][1] = chCount[1][1] + 1;
+                        break;
+                    case "Big Bad Wolf":
+                        chCount[6][1] = chCount[2][1] + 1;
+                        break;
+                    case "Farquaad":
+                        chCount[7][1] = chCount[3][1] + 1;
+                        break;
+                    case "Three Lil Piggies":
+                        chCount[8][1] = chCount[0][1] + 1;
+                        break;
+                    case "Pinocchio":
+                        chCount[9][1] = chCount[1][1] + 1;
+                        break;
+                    case "Three Blind Mice":
+                        chCount[10][1] = chCount[2][1] + 1;
+                        break;
+                    case "Fairy Godmother":
+                        chCount[11][1] = chCount[3][1] + 1;
+                        break;
+                    default:
+                        break;
+                }
+                
+                System.out.print(chartData[i][k]);
+            }
+            System.out.println();
+        }
+        
+        for (int d = 0; d < 4; d++){
+            System.out.println(chCount[d][1]);
         }
         
         // close statement
         stmt.close();
         // close connection
         con.close();
-        return orderData;
+        return chartData;
        }
         // detect problems interacting with the database
        catch ( SQLException sqlException ) {
@@ -305,7 +366,7 @@ String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New fo
         } finally{
             
         }
-        return orderData;
+        return chartData;
     }
     
     // stuff for pulling admin inventory info - cam

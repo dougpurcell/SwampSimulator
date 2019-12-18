@@ -126,6 +126,10 @@ public void chartView(){
     chartView.setBackground(Color.blue);
     chartView.setSize(800,600);
     chartView.setVisible(false);
+    
+    // declare / init new database object
+    Database db = new Database();
+    db.getChartData();
 }
 
     @Override
