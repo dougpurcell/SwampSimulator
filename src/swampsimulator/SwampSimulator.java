@@ -23,10 +23,11 @@ public class SwampSimulator {
     protected Game game;
     private Order ord;
     public AdminInventory adminInv;
+    private loginScreen lgnscreen;
 
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
-        lgn = new Login(this);
+        lgnscreen = new loginScreen(this);
         adv = new Adventure(this);
         chr = new Character(this);
         ord = new Order(this);
@@ -36,7 +37,7 @@ public class SwampSimulator {
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
-        ss.add(lgn);
+        ss.add(lgnscreen);
 
 //        ss.add(adminInv); // Cam uncomment this.
         
@@ -44,11 +45,15 @@ public class SwampSimulator {
 
     public void changePanel(String Old, String New) {
         if (Old.equals("login")) {
-            ss.remove(lgn);
+            ss.remove(lgnscreen);
         }
-        if (New.equals("adventure")){
+        if (New.equals("admin")) {
+            ss.add(adminInv);
+        }
+        if (New.equals("adventured")){
             ss.add(adv);
         }
+
         if (Old.equals("adventure")) {
             ss.remove(adv);
         }
@@ -61,6 +66,13 @@ public class SwampSimulator {
         if (New.equals("order")){
             ss.add(ord);
         }
+        if (Old.equals("order")) {
+            ss.remove(ord);
+        }
+        if (New.equals("game")){
+            ss.add(chr);
+        }
+        
         ss.validate();
 
     }

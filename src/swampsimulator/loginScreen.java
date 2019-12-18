@@ -135,7 +135,6 @@ public class loginScreen extends javax.swing.JPanel {
                 if (uName.getText().equals("user")) {
                     gui.changePanel("login", "adventure");
                 }
-
                 if (uName.getText().equals("admin")) {
                     gui.changePanel("login", "admin");
                 }
