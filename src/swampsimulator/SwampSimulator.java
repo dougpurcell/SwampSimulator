@@ -36,10 +36,10 @@ public class SwampSimulator {
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         ss.setLocationRelativeTo(null);
         ss.setVisible(true);
-        ss.add(lgn);
+//        ss.add(lgn);
 
-//        ss.add(adminInv); // Cam uncomment this.
-
+        ss.add(adminInv); // Cam uncomment this.
+        
     }
 
     public void changePanel(String Old, String New) {
@@ -91,8 +91,8 @@ public class SwampSimulator {
 public static void main(String args[]) throws InterruptedException, IOException, LineUnavailableException, UnsupportedAudioFileException {
 
     SwampSimulator ss = new SwampSimulator();
-    ss.playGame(); // moved to a method CAMERON
-//    ss.initialize();
+//    ss.playGame(); // moved to a method CAMERON
+    ss.initialize();
 
     }
 

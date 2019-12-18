@@ -8,13 +8,14 @@ public class AdminInventory extends JPanel implements ActionListener {
     protected SwampSimulator gui;
 
     private JLabel title;
-    private JButton invBut = new JButton("inventory");
+    private JButton invBut = new JButton("edit inventory");
     private JButton ordBut = new JButton("orders");
     private JButton chartBut = new JButton("charts");
     private JTable table;
     private JTable ordTable;
-    private JPanel invPanel;
-    private JPanel ordPanel;
+    private JPanel invPanel = new JPanel();
+    private JPanel ordPanel = new JPanel();
+    private JPanel chartView = new JPanel();
     
 public AdminInventory(SwampSimulator ss) {
         // assigns the jframe we're in
@@ -38,6 +39,8 @@ public AdminInventory(SwampSimulator ss) {
         //holding panel for our buttons
         JPanel holder = new JPanel(new FlowLayout(FlowLayout.CENTER));
         
+        JPanel cage = new JPanel(new FlowLayout(FlowLayout.CENTER));
+        
         // inventory formatting
         invBut.setFont(new Font("Shrek", Font.PLAIN, 30));      // setting font
         invBut.setBackground(new java.awt.Color(198,213,136));  // setting color
@@ -56,12 +59,20 @@ public AdminInventory(SwampSimulator ss) {
         
         invChart();
         ordChart();
-             
+        chartView();
+        
+        cage.add(invPanel);
+        cage.add(ordPanel);
+        cage.add(chartView);
         
         // adds holding panel to main panel
         add(holder, BorderLayout.PAGE_END);
+        add(cage, BorderLayout.CENTER);
 //        add(invChart(), BorderLayout.LINE_START);
-        add(ordPanel, BorderLayout.CENTER);
+//        add(ordPanel, BorderLayout.LINE_END);
+//        add(invPanel, BorderLayout.CENTER);
+//        invChart();
+//        add(invPanel, BorderLayout.CENTER);
         
     }
 
@@ -87,16 +98,16 @@ public void invChart(){
         {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
         {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
         {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"}
+        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
+        {"","","","","","",""}
     };
-    invPanel = new JPanel();
+    
     invPanel.setSize(800,600);
     table = new JTable(data, columnNames);
     
     invPanel.add(table);
     
-    
-    
+    invPanel.setVisible(false);
 }
 
 public void ordChart(){
@@ -110,14 +121,22 @@ public void ordChart(){
         {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"}
         
     };
-    ordPanel = new JPanel();
+    
     ordPanel.setBackground(Color.red);
     ordPanel.setSize(800,600);
     ordTable = new JTable(data, columnNames);
     
     ordPanel.add(ordTable);
     
+    ordPanel.setVisible(false);
+}
+
+public void chartView(){
     
+    
+    chartView.setBackground(Color.blue);
+    chartView.setSize(800,600);
+    chartView.setVisible(false);
 }
 
     @Override
@@ -127,18 +146,37 @@ public void ordChart(){
 //            gui.changePanel("login", "adventure");\
 //            remove(ordPanel);
             if (ordPanel.isVisible()){
-                remove(ordPanel);
+                ordPanel.setVisible(false);
+            } 
+            if (chartView.isVisible()){
+                chartView.setVisible(false);
             }
-            add(invPanel, BorderLayout.CENTER);
+//            invChart();
+//            add(invPanel, BorderLayout.CENTER);
+                invPanel.setVisible(true);
             
             System.out.println("inventory");
         } else if (source == ordBut) {
             if (invPanel.isVisible()){
-                remove(invPanel);
+                invPanel.setVisible(false);
+            } 
+            if (chartView.isVisible()){
+                chartView.setVisible(false);
             }
-            add(ordPanel, BorderLayout.CENTER);
+//            ordChart();
+//            add(ordPanel, BorderLayout.CENTER);
+            ordPanel.setVisible(true);
             System.out.println("order");
         } else if (source == chartBut){
+            if (invPanel.isVisible()){
+                invPanel.setVisible(false);
+            } 
+            if (ordPanel.isVisible()){
+                ordPanel.setVisible(false);
+            }
+//            chartView();
+//            add(chartView, BorderLayout.CENTER);
+            chartView.setVisible(true);
             System.out.println("chart");
         }
         repaint();
