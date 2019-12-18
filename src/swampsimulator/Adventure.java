@@ -10,6 +10,7 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
 import java.util.Arrays;
 import javax.imageio.ImageIO;
 
@@ -23,18 +24,19 @@ public class Adventure extends JPanel implements ActionListener {
     protected SwampSimulator gui;
     private JButton itemButton;
     
-//    Database myDB = new Database();
-//    GameRecord[] queryData = myDB.getQueryData();
+    Database myDB = new Database();
+    AdventureRecord[] queryData = myDB.getQueryData();
 
     JFrame popup;
     protected JLabel ptitle;
     protected JTextArea pdescription;
     protected JButton paddToCart;
-
+    
+private JButton advgame[] = new JButton[6];
 
     public Adventure(SwampSimulator ss) throws IOException {
 
-//        System.out.print(Arrays.toString(queryData));
+        System.out.print(Arrays.toString(queryData));
 
         gui = ss;
 
@@ -42,18 +44,32 @@ public class Adventure extends JPanel implements ActionListener {
         setSize(800,800);
 
 
-        for(int i = 1; i <= 6; i++) { // TODO: Fake DB; with db would be something like length of array of DB objects
-            BufferedImage thumbnail = ImageIO.read(new File("assets/img/adventures/shrek.png")); // swap to link from database, based on location.
+            ArrayList<JButton> buttonList = new ArrayList<JButton>();
 
+        for(int i = 0; i < 6; i++) {
+             BufferedImage thumbnail = ImageIO.read(new File("assets/img/adventures/shrek.png"));
+             advgame[i] = new JButton("");
             itemButton = new JButton( new ImageIcon(thumbnail));
             itemButton.setBorder(BorderFactory.createEmptyBorder());
             itemButton.setSize(200, 200);
             itemButton.addActionListener(this);
             itemButton.setLocation(200,200);
             add(itemButton);
-
+            buttonList.add(itemButton);
         }
-
+        advgame[0] = buttonList.get(0);
+        advgame[1] = buttonList.get(1);
+        advgame[2] = buttonList.get(2);
+        advgame[3] = buttonList.get(3);
+        advgame[4] = buttonList.get(4);
+        advgame[5] = buttonList.get(5);
+        
+        for (int i = 0; i < advgame.length; i++)
+        {
+            System.out.println(queryData[i].getAdName());
+            advgame[i].setText(queryData[i].getAdName());
+        }
+        
         setVisible(true);
 
     }

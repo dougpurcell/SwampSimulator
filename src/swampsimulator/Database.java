@@ -14,11 +14,11 @@ import javax.swing.*;
 public class Database {
     
 //Declaration of variables    
-//String myConnectString = "jdbc:ucanaccess://D:/IST 311/SwampSimulator-master/ShrekSim.accdb";
-//String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New folder/swampsimulator/ShrekSim.accdb";
-String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IST-311_OOD-SoftwareDev/MasterContenderProject/SwampSimulator/ShrekSim.accdb";
+//String myConnectString = 
+//     "jdbc:ucanaccess://C:/Users/Gauta/Downloads/SwampSimulator/ShrekSim.accdb";
+    String myConnectString = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IST-311_OOD-SoftwareDev/MasterContenderProject/SwampSimulator/ShrekSim.accdb";
 //createTable() drops the current table and creates a new one
-    public void createTable() {
+    public void createAdTable() {
         
        try
         {
@@ -32,14 +32,61 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
          
          //this code may need to be commented out because an exception will be thrown
          //if this table doesn't exist in the database
-         stmt.execute("DROP TABLE Item"); // as long as we don't drop it before we exit we should be fine -Cam
+         stmt.execute("DROP TABLE Adventure");
          
-         stmt.execute("CREATE TABLE Item" + 
-                         "(AdventureID varchar(255), CharacterID varchar(255)," +
-                         " AdventureName varchar(255), " + 
-                         "AdventureValue number, CharacterName varchar(255), CharacterValue number)");
+         stmt.execute("CREATE TABLE Adventure" + 
+                         "(AdventureID varchar(255)," +
+                         "AdventureName varchar(255), " + 
+                         "AdventureValue number)");
         
-         System.out.println("Created Item table");
+         System.out.println("Created Adventure table");
+         
+         stmt.close();
+         con.close();
+        }
+       // detect problems interacting with the database
+      catch ( SQLException sqlException ) {
+         JOptionPane.showMessageDialog( null, 
+            sqlException.getMessage(), "Database Error",
+            JOptionPane.ERROR_MESSAGE );
+         
+         System.exit( 1 );
+      }//end catch block
+      
+      // detect problems loading database driver
+      catch ( ClassNotFoundException classNotFound ) {
+         JOptionPane.showMessageDialog( null, 
+            classNotFound.getMessage(), "Driver Not Found",
+            JOptionPane.ERROR_MESSAGE );
+
+         System.exit( 1 );
+      }//end catch block
+        
+   }//end createTable()
+    
+    public void createCrTable() {
+        
+       try
+        {
+             // load database driver class
+         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+           
+         // connect to database
+         Connection con = DriverManager.getConnection(myConnectString);
+         Statement stmt = con.createStatement();
+         
+         //this code may need to be commented out because an exception will be thrown
+         //if this table doesn't exist in the database
+         stmt.execute("DROP TABLE Character");
+         
+         stmt.execute("CREATE TABLE Character" + 
+                         "(CharacterID varchar(255)," +
+                         "(CharacterInventory number," +
+                         " CharacterName varchar(255), " + 
+                         "CharacterValue number)");
+        
+         System.out.println("Created Character table");
          
          stmt.close();
          con.close();
@@ -67,7 +114,7 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
 
     
 //this method accepts the student data as input and stores it to the database 
-    public void storeRecord(String aId, String cId, String aName, int aValue, String cName, int cValue){
+    public void storeAdRecord(String aId, String aName, int aValue){
        
         try {
          
@@ -80,7 +127,7 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
          
          Statement stmt = con.createStatement();
          //this Insert statement puts student info in the database
-         stmt.executeUpdate("INSERT INTO Item VALUES ("+aId+",'"+cId+",'"+aName+"','" +aValue+"','" +cName+"','"+cValue+"')");
+         stmt.executeUpdate("INSERT INTO Adventure VALUES ("+aId+",'"+aName+"','" +aValue+"')");
          
          stmt.close();
          con.close();
@@ -116,10 +163,122 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
         }//end catch
 
     }//end storeRecord()
-      
-    public GameRecord[] getQueryData ()
+    
+    public AdventureRecord getAdventure (String adName)
     {
-        GameRecord gameArray[] = new GameRecord[20];
+        AdventureRecord adv = new AdventureRecord();
+       
+        
+        try {
+             // load database driver class
+         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+           
+         // connect to database
+         Connection con = DriverManager.getConnection(myConnectString);
+         
+         Statement stmt = con.createStatement();
+
+          ResultSet rs = stmt.executeQuery("SELECT * from Adventure WHERE AdventureName = '"+adName +"'");
+
+          while (rs.next())
+          {
+              String rsAdName = rs.getString("AdventureName");
+              String rsAdId = rs.getString("AdventureId");
+              int rsAdValue = rs.getInt("AdventureValue");
+              
+
+              adv = new AdventureRecord(rsAdName, rsAdId, rsAdValue);
+              
+              System.out.println(rsAdName + " " + rsAdId + " " + rsAdValue);
+          }
+
+          stmt.close();
+
+          con.close();
+
+       }
+       // detect problems interacting with the database
+      catch ( SQLException sqlException ) {
+         JOptionPane.showMessageDialog( null, 
+            sqlException.getMessage(), "Database Error",
+            JOptionPane.ERROR_MESSAGE );
+         
+         System.exit( 1 );
+      }
+      
+      // detect problems loading database driver
+      catch ( ClassNotFoundException classNotFound ) {
+         JOptionPane.showMessageDialog( null, 
+            classNotFound.getMessage(), "Driver Not Found",
+            JOptionPane.ERROR_MESSAGE );
+
+         System.exit( 1 );
+      }      
+       finally{
+           return adv;
+       }
+    }
+      
+    public CharacterRecord getCharacter (String crName)
+    {
+        CharacterRecord cr = new CharacterRecord();
+       
+        
+        try {
+             // load database driver class
+         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+           
+         // connect to database
+         Connection con = DriverManager.getConnection(myConnectString);
+         
+         Statement stmt = con.createStatement();
+
+          ResultSet rs = stmt.executeQuery("SELECT * from Character WHERE CharacterName = '"+crName +"'");
+
+          while (rs.next())
+          {
+              String rsCrId = rs.getString("CharacterID");
+              int rsCrIn = rs.getInt("CharacterInventory");
+              String rsCrName = rs.getString("CharacterName");
+              int rsCrValue = rs.getInt("CharacterValue");
+              
+
+              cr = new CharacterRecord(rsCrId, rsCrIn, rsCrName, rsCrValue);
+              
+              System.out.println(rsCrId + " " + rsCrIn + " " + rsCrName + " " + rsCrValue);
+          }
+
+          stmt.close();
+
+          con.close();
+
+       }
+       // detect problems interacting with the database
+      catch ( SQLException sqlException ) {
+         JOptionPane.showMessageDialog( null, 
+            sqlException.getMessage(), "Database Error",
+            JOptionPane.ERROR_MESSAGE );
+         
+         System.exit( 1 );
+      }
+      
+      // detect problems loading database driver
+      catch ( ClassNotFoundException classNotFound ) {
+         JOptionPane.showMessageDialog( null, 
+            classNotFound.getMessage(), "Driver Not Found",
+            JOptionPane.ERROR_MESSAGE );
+
+         System.exit( 1 );
+      }      
+       finally{
+           return cr;
+       }
+    }
+    public AdventureRecord[] getQueryData ()
+    {
+        AdventureRecord gameArray[] = new AdventureRecord[6];
         int numRecords = 0;
         
         try {
@@ -132,26 +291,23 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
          
          Statement stmt = con.createStatement();
 
-          ResultSet rs = stmt.executeQuery("SELECT * from Item");
+          ResultSet rs = stmt.executeQuery("SELECT * from Adventure");
 
           while (rs.next())
           {
               String rsAdID = rs.getString("AdventureID");
-              String rsCrID = rs.getString("CharacterID");
               String rsAdName = rs.getString("AdventureName");
               int rsAdValue = rs.getInt("AdventureValue");
-              String rsCrName = rs.getString("CharacterName");
-              int rsCrValue = rs.getInt("CharacterValue");
 
-              gameArray[numRecords] = new GameRecord(rsAdID, rsCrID, rsAdName, rsAdValue, rsCrName, rsCrValue);
+              gameArray[numRecords] = new AdventureRecord(rsAdID,rsAdName,rsAdValue);
               numRecords++;
-              System.out.println(rsAdName + " " + rsCrName);
+              System.out.println(rsAdName);
           }
 
           stmt.close();
+
           con.close();
 
-           return gameArray;
        }
        // detect problems interacting with the database
       catch ( SQLException sqlException ) {
@@ -173,8 +329,63 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
        finally{
            return gameArray;
        }
+    }
+        public CharacterRecord[] getCrData ()
+    {
+        CharacterRecord crArray[] = new CharacterRecord[20];
+        int numRecords = 0;
+        
+        try {
+             // load database driver class
+         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+
+           
+         // connect to database
+         Connection con = DriverManager.getConnection(myConnectString);
+         
+         Statement stmt = con.createStatement();
+
+          ResultSet rs = stmt.executeQuery("SELECT * from Character");
+
+          while (rs.next())
+          {
+              String rsCrID = rs.getString("CharacterID");
+              int rsCrIn = rs.getInt("CharacterInventory");
+              String rsCrName = rs.getString("CharacterName");
+              int rsCrValue = rs.getInt("CharacterValue");
+
+              crArray[numRecords] = new CharacterRecord(rsCrID, rsCrIn, rsCrName, rsCrValue);
+              numRecords++;
+              System.out.println(rsCrName);
+          }
+
+          stmt.close();
+
+          con.close();
+
+       }
+       // detect problems interacting with the database
+      catch ( SQLException sqlException ) {
+         JOptionPane.showMessageDialog( null, 
+            sqlException.getMessage(), "Database Error",
+            JOptionPane.ERROR_MESSAGE );
+         
+         System.exit( 1 );
+      }
+      
+      // detect problems loading database driver
+      catch ( ClassNotFoundException classNotFound ) {
+         JOptionPane.showMessageDialog( null, 
+            classNotFound.getMessage(), "Driver Not Found",
+            JOptionPane.ERROR_MESSAGE );
+
+         System.exit( 1 );
+      }      
+       finally{
+           return crArray;
+       }
    }
-    public String[][] getOrderStats(){
+        public String[][] getOrderStats(){
          String[][] orderData = new String[4][4];
         try {
         // load database driver class
@@ -389,11 +600,11 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
         while (aRS.next()){
             
             // save info from table
-            String aName = aRS.getString("Adventure Name");
-            String aCoin = aRS.getString("Shrekcoin Value");
-            String aDes = aRS.getString("Adventure Description");
-            String aImage = aRS.getString("Adventure Image");
-            String aGame = aRS.getString("Game Image");
+            String aName = aRS.getString("AdventureName");
+            String aCoin = aRS.getString("AdventureValue");
+            String aDes = aRS.getString("AdventureDescription");
+            String aImage = aRS.getString("AdventureImage");
+            String aGame = aRS.getString("GameImage");
             String aInventory = "1";
             
             // write to array
@@ -414,12 +625,12 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
         while (rs.next()){
             
             // save info from table
-            String Name = rs.getString("Character Name");
-            String Image = rs.getString("Character Image");
-            String chDes = rs.getString("Character Description");
-            String Inventory = Integer.toString(rs.getInt("Character Inventory"));
-            String gameImage = rs.getString("Game Image");
-            String shrekCoin = rs.getString("Shrekcoin Value");
+            String Name = rs.getString("CharacterName");
+            String Image = rs.getString("CharacterImage");
+            String chDes = rs.getString("CharacterDescription");
+            String Inventory = Integer.toString(rs.getInt("CharacterInventory"));
+            String gameImage = rs.getString("GameImage");
+            String shrekCoin = rs.getString("CharacterValue");
             
             // write to array
             characterTable[characterCount][0] = "Character";
@@ -459,8 +670,6 @@ String myConnectString  = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IS
         }      
         return characterTable;
     }
-    
-    
 }// end Database class
     
 
