@@ -185,7 +185,7 @@ String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New fo
         Statement stmt = con.createStatement();
         
         // query the database - select all from characters
-        ResultSet rs = stmt.executeQuery("SELECT * FROM User");
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Order");
         
         // variable holding count of orders
         int orderCount = 0;
@@ -241,7 +241,72 @@ String myConnectString  = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New fo
         return orderData;
     }
     
-    
+    public String[][] getChartData(){
+        String[][] chartData = new String[4][4];
+        try {
+        // load database driver class
+        Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
+           
+        // connect to database
+        Connection con = DriverManager.getConnection(myConnectString);
+        Statement stmt = con.createStatement();
+        
+        // query the database - select all from characters
+        ResultSet rs = stmt.executeQuery("SELECT * FROM Order");
+        
+        // variable holding count of orders
+        int orderCount = 0;
+        // counting the rows for order table
+        while (rs.next()){
+            orderCount++;           
+        }
+        
+        // initiate the order array
+        orderData = new String[orderCount][5];
+        
+        // reset result set
+        rs = stmt.executeQuery("SELECT * FROM Order");
+        
+        // reset order count variable for efficiency
+        orderCount = 0;
+        
+        // write to the order array
+        while (rs.next()){
+            orderData[orderCount][0] = rs.getString(5);
+            orderData[orderCount][1] = rs.getString(1);
+            orderData[orderCount][2] = rs.getString(2);
+            orderData[orderCount][3] = rs.getString(3);
+            orderData[orderCount][4] = rs.getString(4);
+            orderCount++;
+        }
+        
+        // close statement
+        stmt.close();
+        // close connection
+        con.close();
+        return orderData;
+       }
+        // detect problems interacting with the database
+       catch ( SQLException sqlException ) {
+          JOptionPane.showMessageDialog( null, 
+             sqlException.getMessage(), "Database Error",
+             JOptionPane.ERROR_MESSAGE );
+          System.out.println(JOptionPane.ERROR_MESSAGE);
+          System.exit( 1 );
+       }
+
+        // detect problems loading database driver
+        catch ( ClassNotFoundException classNotFound ) {
+            JOptionPane.showMessageDialog( null, 
+               classNotFound.getMessage(), "Driver Not Found",
+               JOptionPane.ERROR_MESSAGE );
+               System.out.println(JOptionPane.ERROR_MESSAGE);
+            System.exit( 1 );
+        } finally{
+            
+        }
+        return orderData;
+    }
     
     // stuff for pulling admin inventory info - cam
     public String[][] getAdminStats(){
