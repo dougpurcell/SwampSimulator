@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dataroot SYSTEM "Character.dtd">
+<dataroot>
+<Character>
+<CharacterID>C1</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Shrek</CharacterName>
+<CharacterValue>100</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C5</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Farquad</CharacterName>
+<CharacterValue>60</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C2</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Gingerbread Man</CharacterName>
+<CharacterValue>30</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C3</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Puss in Boots</CharacterName>
+<CharacterValue>150</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C4</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Big Bad Wolf</CharacterName>
+<CharacterValue>25</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C6</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Three Lil Piggies</CharacterName>
+<CharacterValue>15</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C7</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Pinocchio</CharacterName>
+<CharacterValue>70</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C8</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Three Blind Mice</CharacterName>
+<CharacterValue>10</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C9</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Fairy Godmother</CharacterName>
+<CharacterValue>80</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C10</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Donkey</CharacterName>
+<CharacterValue>90</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C11</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Fiona (Princess)</CharacterName>
+<CharacterValue>85</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C12</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Dragon</CharacterName>
+<CharacterValue>125</CharacterValue>
+</Character>
+</dataroot>

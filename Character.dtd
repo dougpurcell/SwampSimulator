@@ -1,0 +1,8 @@
+<!ELEMENT dataroot (Character*)>
+<!ELEMENT Character (CharacterID,CharacterInventory,CharacterName,CharacterValue)>
+<!ELEMENT CharacterID (#PCDATA)>
+<!ELEMENT CharacterInventory (#PCDATA)>
+<!ELEMENT CharacterName (#PCDATA)>
+<!ELEMENT CharacterValue (#PCDATA)>
+
+

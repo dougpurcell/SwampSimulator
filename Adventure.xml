@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dataroot SYSTEM "Adventure.dtd">
+<dataroot>
+<Adventure>
+<AdventureID>A1</AdventureID>
+<AdventureName>Shrek 1</AdventureName>
+<AdventureValue>90</AdventureValue>
+</Adventure>
+<Adventure>
+<AdventureID>A2</AdventureID>
+<AdventureName>Shrek 2</AdventureName>
+<AdventureValue>69</AdventureValue>
+</Adventure>
+<Adventure>
+<AdventureID>A3</AdventureID>
+<AdventureName>Shrek The Third</AdventureName>
+<AdventureValue>52</AdventureValue>
+</Adventure>
+<Adventure>
+<AdventureID>A4</AdventureID>
+<AdventureName>Shrek Forever After</AdventureName>
+<AdventureValue>54</AdventureValue>
+</Adventure>
+<Adventure>
+<AdventureID>A5</AdventureID>
+<AdventureName>Shrek The Halls</AdventureName>
+<AdventureValue>63</AdventureValue>
+</Adventure>
+<Adventure>
+<AdventureID>A6</AdventureID>
+<AdventureName>Scared Shrekless</AdventureName>
+<AdventureValue>63</AdventureValue>
+</Adventure>
+</dataroot>
