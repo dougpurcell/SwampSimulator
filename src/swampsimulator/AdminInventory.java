@@ -16,7 +16,7 @@ public class AdminInventory extends JPanel implements ActionListener {
     private JPanel invPanel = new JPanel();
     private JPanel ordPanel = new JPanel();
     private JPanel chartView = new JPanel();
-    
+    public String[][] charData = new String[12][6];
 public AdminInventory(SwampSimulator ss) {
         // assigns the jframe we're in
         gui = ss;
@@ -47,93 +47,80 @@ public AdminInventory(SwampSimulator ss) {
         invBut.addActionListener(this);                         // adding action listener
         holder.add(invBut);                                     // adding to holding panel
         
+        // order formatting
         ordBut.setFont(new Font("Shrek", Font.PLAIN, 30));      // setting font
         ordBut.setBackground(new java.awt.Color(198,213,136));  // setting color
         ordBut.addActionListener(this);                         // adding action listener   
         holder.add(ordBut);                                     // adding to holding panel
         
+        // chart formatting
         chartBut.setFont(new Font("Shrek", Font.PLAIN, 30));    // setting font
         chartBut.setBackground(new java.awt.Color(198,213,136));// setting color
         chartBut.addActionListener(this);                       // adding action listener
         holder.add(chartBut);                                   // adding to holding panel
         
+        // init charts
         invChart();
         ordChart();
         chartView();
         
+        // add charts to holding pane
         cage.add(invPanel);
         cage.add(ordPanel);
         cage.add(chartView);
         
         // adds holding panel to main panel
         add(holder, BorderLayout.PAGE_END);
+        // adds chart holding unit to main panel
         add(cage, BorderLayout.CENTER);
-//        add(invChart(), BorderLayout.LINE_START);
-//        add(ordPanel, BorderLayout.LINE_END);
-//        add(invPanel, BorderLayout.CENTER);
-//        invChart();
-//        add(invPanel, BorderLayout.CENTER);
         
     }
 
+// displays inventory chart for admin users, uses getAdminStats from Database class
 public void invChart(){
     
     // column names for table
     String[] columnNames = {"Type","Title","Price","Description","Thumbnail","Game Image","Stock"};
     
-    // information for table needs to be pumped from database
-    Object[][] data = {
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"},
-        {"","","","","","",""}
-    };
+    // declare / init new database object
+    Database db = new Database();
     
+    // set panel size
     invPanel.setSize(800,600);
-    table = new JTable(data, columnNames);
     
-    invPanel.add(table);
+    // create table w/ gotten info from database
+    table = new JTable(db.getAdminStats(), columnNames);
     
+    // add table to the panel
+    invPanel.add(new JScrollPane(table));
+    
+    // hide it
     invPanel.setVisible(false);
 }
 
+// displays order chart for admin users, uses getOrderStats from Database class
 public void ordChart(){
     
     // column names for table
-    String[] columnNames = {"Type","Title","Price","Description","Thumbnail","Game Image","Stock"};
+    String[] columnNames = {"User ID","Date Ordered","Characters","Adventure","Total"};
     
-    // information for table needs to be pumped from database
-    Object[][] data = {
-        {"Adventure","Shrek 1","100","idk man","some filepath","some other filepath","1"},
-        {"Character","Shrek","100","ya boi","some new filepath","idk anymore", "3"}
-        
-    };
+    // declare / init new database object
+    Database db = new Database();
     
-    ordPanel.setBackground(Color.red);
+    // set panel size
     ordPanel.setSize(800,600);
-    ordTable = new JTable(data, columnNames);
     
-    ordPanel.add(ordTable);
+    // create table w/ gotten info from database
+    ordTable = new JTable(db.getOrderStats(), columnNames);
     
+    // add table to the panel
+    ordPanel.add(new JScrollPane(ordTable));
+    
+    // hide it
     ordPanel.setVisible(false);
 }
 
 public void chartView(){
-    
-    
     chartView.setBackground(Color.blue);
     chartView.setSize(800,600);
     chartView.setVisible(false);
@@ -142,42 +129,58 @@ public void chartView(){
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
+        
+        // if inventory button
         if (source == invBut) {
-//            gui.changePanel("login", "adventure");\
-//            remove(ordPanel);
+            // if order panel is visible
             if (ordPanel.isVisible()){
+                // set order view to not visible
                 ordPanel.setVisible(false);
-            } 
-            if (chartView.isVisible()){
-                chartView.setVisible(false);
             }
-//            invChart();
-//            add(invPanel, BorderLayout.CENTER);
-                invPanel.setVisible(true);
             
-            System.out.println("inventory");
-        } else if (source == ordBut) {
-            if (invPanel.isVisible()){
-                invPanel.setVisible(false);
-            } 
+            // if chart panel is visible
             if (chartView.isVisible()){
+                // set chart view to not visible
                 chartView.setVisible(false);
             }
-//            ordChart();
-//            add(ordPanel, BorderLayout.CENTER);
-            ordPanel.setVisible(true);
-            System.out.println("order");
-        } else if (source == chartBut){
+            
+            // set inventory panel to visible
+            invPanel.setVisible(true);
+         
+        }
+        // if order button
+        else if (source == ordBut) {
+            // if inventory panel is visible
             if (invPanel.isVisible()){
+                // set it to not visible
                 invPanel.setVisible(false);
             } 
+            
+            // if chart panel is visible
+            if (chartView.isVisible()){
+                // set it to not visible
+                chartView.setVisible(false);
+            }
+            
+            // set order panel to visible
+            ordPanel.setVisible(true);
+            
+        } 
+        // if chart button
+        else if (source == chartBut){
+            // if inventory panel is visible
+            if (invPanel.isVisible()){
+                // set it to not visible
+                invPanel.setVisible(false);
+            } 
+            // if order panel is visible
             if (ordPanel.isVisible()){
+                // set it to not visible
                 ordPanel.setVisible(false);
             }
-//            chartView();
-//            add(chartView, BorderLayout.CENTER);
+            
+            // set chart panel to visible
             chartView.setVisible(true);
-            System.out.println("chart");
         }
         repaint();
     }
