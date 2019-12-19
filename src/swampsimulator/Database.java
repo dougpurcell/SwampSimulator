@@ -16,7 +16,8 @@ public class Database {
 //Declaration of variables    
 //String myConnectString = 
 //     "jdbc:ucanaccess://C:/Users/Gauta/Downloads/SwampSimulator/ShrekSim.accdb";
-    String myConnectString = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IST-311_OOD-SoftwareDev/MasterContenderProject/SwampSimulator/ShrekSim.accdb";
+//    String myConnectString = "jdbc:ucanaccess:///Users/doug/Google Drive/College/IST-311_OOD-SoftwareDev/MasterContenderProject/SwampSimulator/ShrekSim.accdb";
+    String myConnectString = "jdbc:ucanaccess://G:/Fall 2019/IST 311/project/New folder/swampsimulator/ShrekSim.accdb";
 //createTable() drops the current table and creates a new one
     public void createAdTable() {
         
@@ -452,8 +453,9 @@ public class Database {
         return orderData;
     }
     
-    public String[][] getChartData(){
+    public int[][] getChartData(){
         String[][] chartData = new String[4][4];
+        int[][] chCount = new int[12][2];
         try {
         // load database driver class
         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -495,7 +497,7 @@ public class Database {
             orderCount++;
         }
         // array for calculating character counts
-        int[][] chCount = new int[12][2];
+        
         
         // for each 
         for (int i = 0; i < orderCount; i++){
@@ -516,28 +518,28 @@ public class Database {
                         chCount[3][1] = chCount[3][1] + 1;
                         break;
                     case "Gingerbread Man":
-                        chCount[4][1] = chCount[0][1] + 1;
+                        chCount[4][1] = chCount[4][1] + 1;
                         break;
                     case "Puss in Boots":
-                        chCount[5][1] = chCount[1][1] + 1;
+                        chCount[5][1] = chCount[5][1] + 1;
                         break;
                     case "Big Bad Wolf":
-                        chCount[6][1] = chCount[2][1] + 1;
+                        chCount[6][1] = chCount[6][1] + 1;
                         break;
                     case "Farquaad":
-                        chCount[7][1] = chCount[3][1] + 1;
+                        chCount[7][1] = chCount[7][1] + 1;
                         break;
                     case "Three Lil Piggies":
-                        chCount[8][1] = chCount[0][1] + 1;
+                        chCount[8][1] = chCount[8][1] + 1;
                         break;
                     case "Pinocchio":
-                        chCount[9][1] = chCount[1][1] + 1;
+                        chCount[9][1] = chCount[9][1] + 1;
                         break;
                     case "Three Blind Mice":
-                        chCount[10][1] = chCount[2][1] + 1;
+                        chCount[10][1] = chCount[10][1] + 1;
                         break;
                     case "Fairy Godmother":
-                        chCount[11][1] = chCount[3][1] + 1;
+                        chCount[11][1] = chCount[11][1] + 1;
                         break;
                     default:
                         break;
@@ -548,7 +550,7 @@ public class Database {
             System.out.println();
         }
         
-        for (int d = 0; d < 4; d++){
+        for (int d = 0; d < 12; d++){
             System.out.println(chCount[d][1]);
         }
         
@@ -556,7 +558,7 @@ public class Database {
         stmt.close();
         // close connection
         con.close();
-        return chartData;
+        return chCount;
        }
         // detect problems interacting with the database
        catch ( SQLException sqlException ) {
@@ -575,9 +577,9 @@ public class Database {
                System.out.println(JOptionPane.ERROR_MESSAGE);
             System.exit( 1 );
         } finally{
-            
+            return chCount;
         }
-        return chartData;
+        
     }
     
     // stuff for pulling admin inventory info - cam

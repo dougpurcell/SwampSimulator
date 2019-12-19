@@ -4,6 +4,16 @@ import javax.swing.*;
 import java.awt.*;
 import java.awt.event.*;
 
+import org.jfree.chart.ChartFactory;
+import org.jfree.chart.ChartPanel;
+import org.jfree.chart.JFreeChart;
+import org.jfree.chart.plot.PiePlot3D;
+import org.jfree.chart.plot.PlotOrientation;
+import org.jfree.data.category.DefaultCategoryDataset;
+import org.jfree.data.general.DefaultPieDataset;
+import org.jfree.data.general.PieDataset;
+import org.jfree.util.Rotation;
+
 public class AdminInventory extends JPanel implements ActionListener {
     protected SwampSimulator gui;
 
@@ -123,13 +133,48 @@ public void ordChart(){
 }
 
 public void chartView(){
-    chartView.setBackground(Color.blue);
-    chartView.setSize(800,600);
+    
+    chartView.setSize(800,800);
     chartView.setVisible(false);
     
     // declare / init new database object
     Database db = new Database();
-    db.getChartData();
+    
+    // declare / init data for chart using database.getChartData()
+    int[][] chCount = db.getChartData();
+    
+    // create new dataset to hold our data
+    DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+    
+    // assigning chart values, need to do it stupidly bc you cannot do it in a switch / case
+    dataset.addValue(chCount[0][1], "Character","Shrek");
+    dataset.addValue(chCount[1][1], "Character","Donkey");
+    dataset.addValue(chCount[2][1], "Character","Fiona");
+    dataset.addValue(chCount[3][1], "Character","Fiona");
+    dataset.addValue(chCount[4][1], "Character","Gingerbread Man");
+    dataset.addValue(chCount[5][1], "Character","Puss in Boots");
+    dataset.addValue(chCount[6][1], "Character","Big Bad Wolf");
+    dataset.addValue(chCount[7][1], "Character","Farquaad");
+    dataset.addValue(chCount[8][1], "Character","Three Lil Piggies");
+    dataset.addValue(chCount[9][1], "Character","Pinocchio");
+    dataset.addValue(chCount[10][1], "Character","Three Blind Mice");
+    dataset.addValue(chCount[11][1], "Character","Fairy Godmother");
+    
+    JFreeChart barChart = ChartFactory.createBarChart(
+            
+            "What's Hot",
+            "Character",
+            "Times Purchased",
+            dataset,
+            PlotOrientation.VERTICAL,
+            true, true, false
+    );
+    
+    ChartPanel chartPanel = new ChartPanel( barChart);
+    chartPanel.setPreferredSize(new java.awt.Dimension( 800 , 600 ) );        
+    //setContentPane( chartPanel ); 
+    chartView.add(chartPanel);
+    
 }
 
     @Override
