@@ -131,7 +131,7 @@ public class SwampSimulator {
         while (game.returnCount() < 4){
             game.move();
             game.repaint();
-            System.out.println(game.returnCount());
+//            System.out.println(game.returnCount());
 
 
             Thread.sleep(10);
@@ -160,7 +160,7 @@ public void readAdFile(String filename){
                 xmlAdImg = getAdImg(element);
                 xmlGaImg = getGaImg(element);
                 AdventureRecord record = new AdventureRecord(xmlAdId, xmlAdName, xmlAdValue,xmlAdDesc,xmlAdImg,xmlGaImg);
-                System.out.println(record.toString());
+//                System.out.println(record.toString());
                 // store student record in array
                 gameArray[nextRecord] = record;
                 

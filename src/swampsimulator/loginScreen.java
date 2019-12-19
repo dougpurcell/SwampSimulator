@@ -22,6 +22,7 @@ public class loginScreen extends javax.swing.JPanel {
         initComponents();
         jPanel1.setBackground(new java.awt.Color(253,243,194));
         jPanel1.setSize(600,400);
+        jPanel1.setLocation(400,200);
         welcome.setFont(new Font("Shrek", Font.PLAIN, 30));
         welcome.setForeground(new java.awt.Color(198,213,136));
         welcome.setSize(800, 30);

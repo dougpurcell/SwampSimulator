@@ -43,7 +43,7 @@ public class Character extends JPanel implements ActionListener {
     public Character(SwampSimulator ss) throws IOException {
 
         gui = ss;
-        System.out.print(Arrays.toString(queryData));
+        
         setBackground(new Color(245, 245, 245));
         setSize(800,800);
         Dimension thumbsize = new Dimension(100,100);
@@ -79,8 +79,6 @@ public class Character extends JPanel implements ActionListener {
         for (int i = 0; i < crButton.length; i++)
         {
             BufferedImage thumbnail = ImageIO.read(new File(queryData[i].getCrImg()));
-            System.out.println(queryData[i].getCrName());
-            crButton[i].setText(queryData[i].getCrName());
             ImageIcon icon = new ImageIcon(thumbnail);
             crButton[i].setIcon(icon);
        
@@ -96,9 +94,9 @@ public class Character extends JPanel implements ActionListener {
         JPanel p = new JPanel();
 
         chrtitle = new JLabel("Shrek"); // swap to link from database, based on location.
-        chrtitle.setFont(new Font("Helvetica", Font.PLAIN, 30));
+        chrtitle.setFont(new Font("Helvetica", Font.PLAIN, 24));
         chrtitle.setForeground(new java.awt.Color(198,213,136));
-        chrtitle.setSize(100,30);
+        chrtitle.setSize(225,30);
         chrtitle.setLocation(100,50);
         popup.add(chrtitle);
 
@@ -106,20 +104,20 @@ public class Character extends JPanel implements ActionListener {
         chrdescription.setFont(new Font("Helvetica", Font.PLAIN, 14));
         chrdescription.setLineWrap(true);
         chrdescription.setWrapStyleWord(true);
-        chrdescription.setSize(250, 50);
+        chrdescription.setSize(250, 100);
         chrdescription.setLocation(100,100);
         popup.add(chrdescription);
         
         price = new JLabel("Price: ");
-        price.setSize(70, 70);
-        price.setLocation(100,150);
+        price.setSize(100, 30);
+        price.setLocation(100,200);
         popup.add(price);
         
         chraddToCart = new JButton("Add To Cart");
         chraddToCart.setSize(125,50);
         chraddToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
         chraddToCart.setBackground(Color.gray);
-        chraddToCart.setLocation(100,200);
+        chraddToCart.setLocation(100,250);
         chraddToCart.addActionListener(this);
         popup.add(chraddToCart);
 

@@ -40,19 +40,14 @@ private JButton advgame[] = new JButton[6];
 
     public Adventure(SwampSimulator ss) throws IOException {
 
-        System.out.print(Arrays.toString(queryData));
-
         gui = ss;
 
         setBackground(new Color(245, 245, 245));
         setSize(800,800);
 
-
-            
-
         for(int i = 0; i < 6; i++) {
              
-             advgame[i] = new JButton("");
+            advgame[i] = new JButton("");
             itemButton = new JButton("");
             itemButton.setBorder(BorderFactory.createEmptyBorder());
             itemButton.addActionListener(this);
@@ -70,9 +65,7 @@ private JButton advgame[] = new JButton[6];
         
         for (int i = 0; i < advgame.length; i++)
         {
-            System.out.println(queryData[i].getAdName());
             BufferedImage thumbnail = ImageIO.read(new File(queryData[i].getAdDesc()));
-            advgame[i].setText(queryData[i].getAdName());
             ImageIcon icon = new ImageIcon(thumbnail);
             advgame[i].setIcon(icon);
         }
@@ -91,7 +84,7 @@ private JButton advgame[] = new JButton[6];
         ptitle = new JLabel("Shrek"); // swap to link from database, based on location.
         ptitle.setFont(new Font("Helvetica", Font.PLAIN, 30));
         ptitle.setForeground(new java.awt.Color(198,213,136));
-        ptitle.setSize(100,30);
+        ptitle.setSize(175,30);
         ptitle.setLocation(100,50);
         popup.add(ptitle);
 
@@ -108,13 +101,13 @@ private JButton advgame[] = new JButton[6];
         paddToCart.setSize(125,50);
         paddToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
         paddToCart.setBackground(Color.gray);
-        paddToCart.setLocation(100,225);
+        paddToCart.setLocation(100,250);
         paddToCart.addActionListener(this);
         popup.add(paddToCart);
         
         price = new JLabel("Price: ");
-        price.setSize(50, 50);
-        price.setLocation(100,190);
+        price.setSize(100, 30);
+        price.setLocation(100,200);
         popup.add(price);
         
         popup.add(p);

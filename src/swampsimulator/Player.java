@@ -60,7 +60,7 @@ public class Player{
         // prints graphic to screen
         g.drawImage(getImage(), x, y, game);
         // prints character position information
-        System.out.println("x: " + x + " xa: " + xa + " y: " + y + " ya: " + ya);
+//        System.out.println("x: " + x + " xa: " + xa + " y: " + y + " ya: " + ya);
     }
     
     // calculates movement in game

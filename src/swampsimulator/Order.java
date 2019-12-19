@@ -22,7 +22,8 @@ public class Order extends javax.swing.JPanel {
      * Creates new form CheckoutScreen
      */
     protected SwampSimulator gui;
-    public Order(SwampSimulator ss) throws IOException{
+    
+    public Order(SwampSimulator ss) throws IOException {
         initComponents();
         jPanel2.setBackground(Color.GRAY);
         gui = ss;
@@ -312,72 +313,73 @@ public class Order extends javax.swing.JPanel {
     private javax.swing.JTextField sCoinValue;
     private javax.swing.JLabel totalSCoin;
     // End of variables declaration//GEN-END:variables
-    public String[] cart = new String[5];
-    public String[] tempCharCart = new String[4];
     
-    public void buttonImages ()
-    {
-        cart[0] = Adventure.getAdOrder();
-        
-        for (int i = 0; i < tempCharCart.length; i++)
-        {
-            tempCharCart[i] = Character.getChrOrderArr();
-        }
-        
-        for (int i = 1; i < cart.length; i++)
-        {
-            cart[i] = tempCharCart[i];
-        }
-        
-        try
-        {
-            BufferedImage adOrderImg = ImageIO.read(new File(cart[0]));
-            ImageIcon icon = new ImageIcon(adOrderImg);
-            adImg.setIcon(icon);
-            
-        } catch (IOException el)
-        {
-            el.printStackTrace();
-        }
-        try
-        {
-            BufferedImage adOrderImg = ImageIO.read(new File(cart[1]));
-            ImageIcon icon = new ImageIcon(adOrderImg);
-            chrImg.setIcon(icon);
-            
-        } catch (IOException el)
-        {
-            el.printStackTrace();
-        }
-        try
-        {
-            BufferedImage adOrderImg = ImageIO.read(new File(cart[2]));
-            ImageIcon icon = new ImageIcon(adOrderImg);
-            chrImg2.setIcon(icon);
-            
-        } catch (IOException el)
-        {
-            el.printStackTrace();
-        }
-        try
-        {
-            BufferedImage adOrderImg = ImageIO.read(new File(cart[3]));
-            ImageIcon icon = new ImageIcon(adOrderImg);
-            chrImg3.setIcon(icon);
-            
-        } catch (IOException el)
-        {
-            el.printStackTrace();
-        }
-        try
-        {
-            BufferedImage adOrderImg = ImageIO.read(new File(cart[4]));
-            ImageIcon icon = new ImageIcon(adOrderImg);
-            chrImg4.setIcon(icon);
-            
-        } catch (IOException el)
-        {
-            el.printStackTrace();
-        }
-    }
+    String[] cart = new String[5];  
+    String[] tempCharCart = new String[4];
+    
+//    public void buttonImages ()
+//    {
+//        cart[0] = Adventure.getAdOrder();
+//        
+//        for (int i = 0; i < tempCharCart.length; i++)
+//        {
+//            tempCharCart[i] = Character.getChrOrderArr();
+//        }
+//        
+//        for (int i = 1; i < cart.length; i++)
+//        {
+//            cart[i] = tempCharCart[i];
+//        }
+//        
+//        try
+//        {
+//            BufferedImage adOrderImg = ImageIO.read(new File(cart[0]));
+//            ImageIcon icon = new ImageIcon(adOrderImg);
+//            adImg.setIcon(icon);
+//            
+//        } catch (IOException el)
+//        {
+//            el.printStackTrace();
+//        }
+//        try
+//        {
+//            BufferedImage adOrderImg = ImageIO.read(new File(cart[1]));
+//            ImageIcon icon = new ImageIcon(adOrderImg);
+//            chrImg.setIcon(icon);
+//            
+//        } catch (IOException el)
+//        {
+//            el.printStackTrace();
+//        }
+//        try
+//        {
+//            BufferedImage adOrderImg = ImageIO.read(new File(cart[2]));
+//            ImageIcon icon = new ImageIcon(adOrderImg);
+//            chrImg2.setIcon(icon);
+//            
+//        } catch (IOException el)
+//        {
+//            el.printStackTrace();
+//        }
+//        try
+//        {
+//            BufferedImage adOrderImg = ImageIO.read(new File(cart[3]));
+//            ImageIcon icon = new ImageIcon(adOrderImg);
+//            chrImg3.setIcon(icon);
+//            
+//        } catch (IOException el)
+//        {
+//            el.printStackTrace();
+//        }
+//        try
+//        {
+//            BufferedImage adOrderImg = ImageIO.read(new File(cart[4]));
+//            ImageIcon icon = new ImageIcon(adOrderImg);
+//            chrImg4.setIcon(icon);
+//            
+//        } catch (IOException el)
+//        {
+//            el.printStackTrace();
+//        }
+//    }
 }
