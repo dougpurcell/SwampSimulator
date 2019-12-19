@@ -3,31 +3,49 @@
 <Adventure>
 <AdventureID>A1</AdventureID>
 <AdventureName>Shrek 1</AdventureName>
+<AdventureImage>assets/img/adventures/shrek.png</AdventureImage>
+<AdventureDescription>A mean lord exiles fairytale creatures to the swamp of a grumpy ogre, who must go on a quest and rescue a princess for the lord in order to get his land back.</AdventureDescription>
 <AdventureValue>90</AdventureValue>
+<GameImage>src/gameArt/adventures/shrek 1 background.png</GameImage>
 </Adventure>
 <Adventure>
 <AdventureID>A2</AdventureID>
 <AdventureName>Shrek 2</AdventureName>
+<AdventureImage>assets/img/adventures/shrek2.png</AdventureImage>
+<AdventureDescription>Princess Fiona&apos;s parents invite her and Shrek to dinner to celebrate her marriage. If only they knew the newlyweds were both ogres.</AdventureDescription>
 <AdventureValue>69</AdventureValue>
+<GameImage>src/gameArt/adventures/shrek 2 background.png</GameImage>
 </Adventure>
 <Adventure>
 <AdventureID>A3</AdventureID>
 <AdventureName>Shrek The Third</AdventureName>
+<AdventureImage>assets/img/adventures/shrekthethird.png</AdventureImage>
+<AdventureDescription>When his new father-in-law, King Harold falls ill, Shrek is looked at as the heir to the land of Far, Far Away.</AdventureDescription>
 <AdventureValue>52</AdventureValue>
+<GameImage>src/gameArt/adventures/shrek 3 background.png</GameImage>
 </Adventure>
 <Adventure>
 <AdventureID>A4</AdventureID>
 <AdventureName>Shrek Forever After</AdventureName>
+<AdventureImage>assets/img/adventures/shrekforeverafter.png</AdventureImage>
+<AdventureDescription>Rumpelstiltskin tricks a mid-life crisis burdened Shrek into allowing himself to be erased from existence and cast in a dark alternate timeline where Rumpel rules supreme.</AdventureDescription>
 <AdventureValue>54</AdventureValue>
+<GameImage>src/gameArt/adventures/shrek 4 background.png</GameImage>
 </Adventure>
 <Adventure>
 <AdventureID>A5</AdventureID>
 <AdventureName>Shrek The Halls</AdventureName>
+<AdventureImage>assets/img/adventures/shrekthehalls.png</AdventureImage>
+<AdventureDescription>The Shrek characters put their own spin on holiday traditions.</AdventureDescription>
 <AdventureValue>63</AdventureValue>
+<GameImage>src/gameArt/adventures/shrek the halls.png</GameImage>
 </Adventure>
 <Adventure>
 <AdventureID>A6</AdventureID>
 <AdventureName>Scared Shrekless</AdventureName>
+<AdventureImage>assets/img/adventures/scaredshrekless.png</AdventureImage>
+<AdventureDescription>Shrek gets in the Halloween spirit by challenging his fairytale friends to come up with scary stories for a contest.</AdventureDescription>
 <AdventureValue>63</AdventureValue>
+<GameImage>src/gameArt/adventures/scared shrekless.png</GameImage>
 </Adventure>
 </dataroot>

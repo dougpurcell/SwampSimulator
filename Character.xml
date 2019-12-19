@@ -1,75 +1,111 @@
-<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dataroot SYSTEM "Character.dtd">
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE dataroot SYSTEM "Adventure.dtd">
 <dataroot>
 <Character>
 <CharacterID>C1</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Shrek</CharacterName>
+<CharacterImage>assets/img/characters/shrek.png</CharacterImage>
+<GameImage>src/gameArt/characters/shrek.gif</GameImage>
+<CharacterDescription>An Ogre who dwells in the swamp near Far Far Away. Star of his own smash hit movie series, he dons a knightly armor set to save the princess Fiona from a tower. His best friend and companion throughout all his adventures is Donkey.</CharacterDescription>
 <CharacterValue>100</CharacterValue>
-</Character>
-<Character>
-<CharacterID>C5</CharacterID>
-<CharacterInventory>5</CharacterInventory>
-<CharacterName>Farquad</CharacterName>
-<CharacterValue>60</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C2</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Gingerbread Man</CharacterName>
+<CharacterImage>assets/img/characters/gingerbreadman.png</CharacterImage>
+<GameImage>src/gameArt/characters/gingerbread man.gif</GameImage>
+<CharacterDescription>Also referred to as Gingy, is a gingerbread cookie baked by The Muffin Man. He lost his legs after being tortured by Lord Farquaad, but was able to have them re-attached with white glaze.</CharacterDescription>
 <CharacterValue>30</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C3</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Puss in Boots</CharacterName>
+<CharacterImage>assets/img/characters/pussnboots.png</CharacterImage>
+<GameImage>src/gameArt/characters/puss in boots.gif</GameImage>
+<CharacterDescription>A rather charming feline who dons a stylish hat and boots. Wields a cutlass and has starred in his own movie. He is another one of Shrek&apos;s close companions.</CharacterDescription>
 <CharacterValue>150</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C4</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Big Bad Wolf</CharacterName>
+<CharacterImage>assets/img/characters/bigbadwolf.png</CharacterImage>
+<GameImage>src/gameArt/characters/wolf.gif</GameImage>
+<CharacterDescription>A peculiar wolf wearing an old woman&apos;s clothing. Was sold to Lord Farquaad&apos;s Army by Red Riding Hood, and was then exiled to Shrek&apos;s swamp.</CharacterDescription>
 <CharacterValue>25</CharacterValue>
+</Character>
+<Character>
+<CharacterID>C5</CharacterID>
+<CharacterInventory>5</CharacterInventory>
+<CharacterName>Farquaad</CharacterName>
+<CharacterImage>assets/img/characters/farquaad.png</CharacterImage>
+<GameImage>src/gameArt/characters/farquaad.gif</GameImage>
+<CharacterDescription>Lord of Duloc. Has a magical omniscient mirror that he regularly converses with. Wanted princess Fiona for himself but Shrek intervened. Was swallowed by Dragon and lives on as a ghost.</CharacterDescription>
+<CharacterValue>60</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C6</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Three Lil Piggies</CharacterName>
+<CharacterImage>assets/img/characters/threelilpiggies.png</CharacterImage>
+<GameImage>src/gameArt/characters/3 piggies.gif</GameImage>
+<CharacterDescription>Three Pigs that tend to stick together. Supposedly builders, although they never state their occupation or skill sets. Speak exclusively in a stereotypical German accent.</CharacterDescription>
 <CharacterValue>15</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C7</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Pinocchio</CharacterName>
+<CharacterImage>assets/img/characters/pinocchio.png</CharacterImage>
+<GameImage>src/gameArt/characters/pinocchio.gif</GameImage>
+<CharacterDescription>A wooden puppet with big dreams of becoming a real boy. Helps Shrek defeat Fairy Godmother and in doing so, is hit by her wand which turns him into a real boy.</CharacterDescription>
 <CharacterValue>70</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C8</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Three Blind Mice</CharacterName>
+<CharacterImage>assets/img/characters/threeblindmice.png</CharacterImage>
+<GameImage>src/gameArt/characters/3 mice.gif</GameImage>
+<CharacterDescription>Identical Mice brothers that can’t see anything. Because they are mice, they can easily fit through small areas.</CharacterDescription>
 <CharacterValue>10</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C9</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Fairy Godmother</CharacterName>
+<CharacterImage>assets/img/characters/fairygodmother.png</CharacterImage>
+<GameImage>src/gameArt/characters/god mother.gif</GameImage>
+<CharacterDescription>A wish-granter and evil-doer who creates an elaborate plan for prince charming to rescue Fiona from the tower. Master of unnecessarily complicated plans and can use magic extensively.</CharacterDescription>
 <CharacterValue>80</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C10</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Donkey</CharacterName>
+<CharacterImage>assets/img/characters/donkey.png</CharacterImage>
+<GameImage>src/gameArt/characters/donkey.gif</GameImage>
+<CharacterDescription>A fairy tale character of unknown origin. Accompanies Shrek the Ogre on many adventures. His wife is a Dragon.</CharacterDescription>
 <CharacterValue>90</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C11</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Fiona (Princess)</CharacterName>
+<CharacterImage>assets/img/characters/fiona.png</CharacterImage>
+<GameImage>src/gameArt/characters/fiona.gif</GameImage>
+<CharacterDescription>Wife of Shrek. Was imprisoned in a tower by the Fairy Godmother to later have Prince Charming save her, but Shrek arrived instead. Was afflicted with a curse that turns her into an Ogre after dusk.</CharacterDescription>
 <CharacterValue>85</CharacterValue>
 </Character>
 <Character>
 <CharacterID>C12</CharacterID>
 <CharacterInventory>5</CharacterInventory>
 <CharacterName>Dragon</CharacterName>
+<CharacterImage>assets/img/characters/dragon.png</CharacterImage>
+<GameImage>src/gameArt/characters/dragon.gif</GameImage>
+<CharacterDescription>Wife of Donkey. A former guard of princess Fiona&apos;s tower before Shrek and Donkey came to her rescue. Can breathe fire.</CharacterDescription>
 <CharacterValue>125</CharacterValue>
 </Character>
 </dataroot>

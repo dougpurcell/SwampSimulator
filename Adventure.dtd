@@ -1,7 +1,10 @@
 <!ELEMENT dataroot (Adventure*)>
-<!ELEMENT Adventure (AdventureID,AdventureName,AdventureValue)>
+<!ELEMENT Adventure (AdventureID,AdventureName,AdventureValue,AdventureDescription,AdventureImage,GameImage)>
 <!ELEMENT AdventureID (#PCDATA)>
 <!ELEMENT AdventureName (#PCDATA)>
 <!ELEMENT AdventureValue (#PCDATA)>
+<!ELEMENT AdventureDescription (#PCDATA)>
+<!ELEMENT AdventureImage (#PCDATA)>
+<!ELEMENT GameImage (#PCDATA)>
 
 

@@ -44,9 +44,15 @@ public class SwampSimulator {
     private int xmlAdValue;
     private int xmlCrValue;
     private int xmlCrInventory;
+    private String xmlAdDesc;
+    private String xmlAdImg;
+    private String xmlGaImg;
+    private String xmlCrImg;
+    private String xmlCrDesc;
+    private String xmlCrGaImg;
     Database myDatabase = new Database();
     //AdventureD ad1;
-
+    String sItem = "";
     public void initialize() throws IOException {
         ss = new JFrame("Swamp Simulator");
         lgnscreen = new loginScreen(this);
@@ -102,6 +108,13 @@ public class SwampSimulator {
         ss.validate();
 
     }
+    public String getItem() {
+        return sItem;
+    }
+    
+   public void setItem(String item) {
+        sItem = item;
+    }
 
     public void playGame() throws InterruptedException, IOException {
 
@@ -143,9 +156,10 @@ public void readAdFile(String filename){
                // xmlCrId = getCrId(element);
                 xmlAdName = getAdName(element);
                 xmlAdValue = getAdValue(element);
-                //xmlCrName = getCrName(element);
-                //xmlCrValue = getCrValue(element);
-                AdventureRecord record = new AdventureRecord(xmlAdId, xmlAdName, xmlAdValue);
+                xmlAdDesc = getAdDesc(element);
+                xmlAdImg = getAdImg(element);
+                xmlGaImg = getGaImg(element);
+                AdventureRecord record = new AdventureRecord(xmlAdId, xmlAdName, xmlAdValue,xmlAdDesc,xmlAdImg,xmlGaImg);
                 System.out.println(record.toString());
                 // store student record in array
                 gameArray[nextRecord] = record;
@@ -192,7 +206,10 @@ public void readCrFile(String filename){
                 xmlCrName = getCrName(element);
                 xmlCrValue = getCrValue(element);
                 xmlCrInventory = getCrInventory(element);
-                CharacterRecord record = new CharacterRecord(xmlCrId, xmlCrInventory, xmlCrName, xmlCrValue);
+                xmlCrDesc = getCrDesc(element);
+                xmlCrImg = getCrImg(element);
+                xmlCrGaImg = getCrGaImg(element);
+                CharacterRecord record = new CharacterRecord(xmlCrId, xmlCrInventory, xmlCrName, xmlCrValue, xmlCrDesc, xmlCrImg, xmlCrGaImg);
                 System.out.println(record.toString());
                 // store student record in array
                 crArray[nextRecord] = record;
@@ -258,6 +275,36 @@ public String getAdId(Element parent){
         NodeList child = parent.getElementsByTagName("CharacterInventory");
         Node childTextNode = child.item(0).getFirstChild();
         return Integer.parseInt(childTextNode.getNodeValue());  
+    }
+    public String getAdDesc(Element parent){ 
+        NodeList child = parent.getElementsByTagName("AdventureDescription");
+        Node childTextNode = child.item(0).getFirstChild();
+        return childTextNode.getNodeValue();  
+    }
+     public String getAdImg(Element parent){ 
+        NodeList child = parent.getElementsByTagName("AdventureImage");
+        Node childTextNode = child.item(0).getFirstChild();
+        return childTextNode.getNodeValue();  
+    }
+      public String getGaImg(Element parent){ 
+        NodeList child = parent.getElementsByTagName("GameImage");
+        Node childTextNode = child.item(0).getFirstChild();
+        return childTextNode.getNodeValue();  
+    }
+      public String getCrGaImg(Element parent){ 
+        NodeList child = parent.getElementsByTagName("GameImage");
+        Node childTextNode = child.item(0).getFirstChild();
+        return childTextNode.getNodeValue();  
+    }
+      public String getCrImg(Element parent){ 
+        NodeList child = parent.getElementsByTagName("CharacterImage");
+        Node childTextNode = child.item(0).getFirstChild();
+        return childTextNode.getNodeValue();  
+    }
+      public String getCrDesc(Element parent){ 
+        NodeList child = parent.getElementsByTagName("CharacterDescription");
+        Node childTextNode = child.item(0).getFirstChild();
+        return childTextNode.getNodeValue();  
     }
 public static void main(String args[]) throws InterruptedException, IOException, LineUnavailableException, UnsupportedAudioFileException {
 

@@ -1,8 +1,11 @@
 <!ELEMENT dataroot (Character*)>
-<!ELEMENT Character (CharacterID,CharacterInventory,CharacterName,CharacterValue)>
+<!ELEMENT Character (CharacterID,CharacterInventory,CharacterName,CharacterValue,CharacterDescription,CharacterImage,GameImage)>
 <!ELEMENT CharacterID (#PCDATA)>
 <!ELEMENT CharacterInventory (#PCDATA)>
 <!ELEMENT CharacterName (#PCDATA)>
 <!ELEMENT CharacterValue (#PCDATA)>
+<!ELEMENT CharacterDescription (#PCDATA)>
+<!ELEMENT CharacterImage (#PCDATA)>
+<!ELEMENT GameImage (#PCDATA)>
 
 
