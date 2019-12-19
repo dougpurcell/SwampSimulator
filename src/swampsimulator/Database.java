@@ -472,7 +472,7 @@ public class Database {
         return orderData;
     }
     
-    public String[][] getChartData(){
+    public int[][] getChartData(){
         String[][] chartData = new String[4][4];
         try {
         // load database driver class
@@ -576,7 +576,7 @@ public class Database {
         stmt.close();
         // close connection
         con.close();
-        return chartData;
+        return chCount;
        }
         // detect problems interacting with the database
        catch ( SQLException sqlException ) {
@@ -597,7 +597,7 @@ public class Database {
         } finally{
             
         }
-        return chartData;
+        return null;
     }
     
     // stuff for pulling admin inventory info - cam
