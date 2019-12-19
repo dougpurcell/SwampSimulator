@@ -33,6 +33,8 @@ public class Adventure extends JPanel implements ActionListener {
     protected JButton paddToCart;
     ArrayList<JButton> buttonList = new ArrayList<JButton>();
     private JLabel price;
+    public String adOrder;
+    private int sourceId = 0;
     
 private JButton advgame[] = new JButton[6];
 
@@ -132,6 +134,7 @@ private JButton advgame[] = new JButton[6];
                 price.setText(String.valueOf("Price: " + queryData[0].getAdValue()));
                 pdescription.setText("Description: " + queryData[0].getAdImg());
                 ptitle.setText(queryData[0].getAdName());
+                sourceId = 0;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -144,6 +147,7 @@ private JButton advgame[] = new JButton[6];
                 price.setText(String.valueOf("Price: " + queryData[1].getAdValue()));
                 pdescription.setText("Description: " + queryData[1].getAdImg());
                 ptitle.setText(queryData[1].getAdName());
+                sourceId = 1;
 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -157,6 +161,7 @@ private JButton advgame[] = new JButton[6];
                 price.setText(String.valueOf("Price: " + queryData[2].getAdValue()));
                 pdescription.setText("Description: " + queryData[2].getAdImg());
                 ptitle.setText(queryData[2].getAdName());
+                sourceId = 2;
 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -170,6 +175,7 @@ private JButton advgame[] = new JButton[6];
                 price.setText(String.valueOf("Price: " + queryData[3].getAdValue()));
                 pdescription.setText("Description: " + queryData[3].getAdImg());
                 ptitle.setText(queryData[3].getAdName());
+                sourceId = 3;
 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -183,6 +189,7 @@ private JButton advgame[] = new JButton[6];
                 price.setText(String.valueOf("Price: " + queryData[4].getAdValue()));
                 pdescription.setText("Description: " + queryData[4].getAdImg());
                 ptitle.setText(queryData[4].getAdName());
+                sourceId = 4;
 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -196,6 +203,7 @@ private JButton advgame[] = new JButton[6];
                 price.setText(String.valueOf("Price: " + queryData[5].getAdValue()));
                 pdescription.setText("Description: " + queryData[5].getAdImg());
                 ptitle.setText(queryData[5].getAdName());
+                sourceId = 5;
 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -208,9 +216,13 @@ private JButton advgame[] = new JButton[6];
             // TODO: add event for adding item to Order Class.
 
             closePopup();
+            adOrder = queryData[sourceId].getAdImg();
             gui.changePanel("adventure", "character");
         }
         repaint();
     }
-    
+    public String getAdOrder()
+    {
+        return adOrder;
+    }
 }

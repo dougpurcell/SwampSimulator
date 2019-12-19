@@ -37,6 +37,8 @@ public class Character extends JPanel implements ActionListener {
     Database myDB = new Database();
     CharacterRecord[] queryData = myDB.getCrData();
      ArrayList<JButton> buttonList = new ArrayList<JButton>();
+     public String[] chrOrderArr = new String[4];
+     private int sourceId = 0;
 
     public Character(SwampSimulator ss) throws IOException {
 
@@ -138,6 +140,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[0].getCrValue()));
                 chrdescription.setText("Description: " + queryData[0].getCrDesc());
                 chrtitle.setText(queryData[1].getCrName());
+                sourceId = 0;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -149,6 +152,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[1].getCrValue()));
                 chrdescription.setText("Description: " + queryData[1].getCrDesc());
                 chrtitle.setText(queryData[1].getCrName());
+                sourceId = 1;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -160,6 +164,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[2].getCrValue()));
                 chrdescription.setText("Description: " + queryData[2].getCrDesc());
                 chrtitle.setText(queryData[2].getCrName());
+                sourceId = 2;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -171,6 +176,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[3].getCrValue()));
                 chrdescription.setText("Description: " + queryData[3].getCrDesc());
                 chrtitle.setText(queryData[3].getCrName());
+                sourceId = 3;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -182,6 +188,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[4].getCrValue()));
                 chrdescription.setText("Description: " + queryData[4].getCrDesc());
                 chrtitle.setText(queryData[4].getCrName());
+                sourceId = 4;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -193,6 +200,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[5].getCrValue()));
                 chrdescription.setText("Description: " + queryData[5].getCrDesc());
                 chrtitle.setText(queryData[5].getCrName());
+                sourceId = 5;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -204,6 +212,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[6].getCrValue()));
                 chrdescription.setText("Description: " + queryData[6].getCrDesc());
                 chrtitle.setText(queryData[6].getCrName());
+                sourceId = 6;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -215,6 +224,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[7].getCrValue()));
                 chrdescription.setText("Description: " + queryData[7].getCrDesc());
                 chrtitle.setText(queryData[7].getCrName());
+                sourceId = 7;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -226,6 +236,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[8].getCrValue()));
                 chrdescription.setText("Description: " + queryData[8].getCrDesc());
                 chrtitle.setText(queryData[8].getCrName());
+                sourceId = 8;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -237,6 +248,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[9].getCrValue()));
                 chrdescription.setText("Description: " + queryData[9].getCrDesc());
                 chrtitle.setText(queryData[9].getCrName());
+                sourceId = 9;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -248,6 +260,7 @@ public class Character extends JPanel implements ActionListener {
                 price.setText(String.valueOf("Price: " + queryData[10].getCrValue()));
                 chrdescription.setText("Description: " + queryData[10].getCrDesc());
                 chrtitle.setText(queryData[10].getCrName());
+                sourceId = 10;
                 
             } catch (IOException e1) {
                 e1.printStackTrace();
@@ -257,6 +270,7 @@ public class Character extends JPanel implements ActionListener {
         if (source == chraddToCart) {
             // TODO: add event for adding item to Order Class.
             closePopup();
+            chrOrderArr[counter] = queryData[sourceId].getCrImg();
             counter++;
         }
         if (counter == 4) {
@@ -266,5 +280,8 @@ public class Character extends JPanel implements ActionListener {
         
         repaint();
     }
-
+    public String[] getChrOrderArr()
+    {
+        return chrOrderArr.clone();
+    }
 }
