@@ -33,8 +33,10 @@ public class Adventure extends JPanel implements ActionListener {
     protected JButton paddToCart;
     ArrayList<JButton> buttonList = new ArrayList<JButton>();
     private JLabel price;
-    public String adOrder;
+    public String adOrderImg;
     private int sourceId = 0;
+    public int adOrderVal;
+    public String adOrderName;
     
 private JButton advgame[] = new JButton[6];
 
@@ -209,13 +211,17 @@ private JButton advgame[] = new JButton[6];
             // TODO: add event for adding item to Order Class.
 
             closePopup();
-            adOrder = queryData[sourceId].getAdImg();
+            adOrderImg = queryData[sourceId].getAdImg();
+            adOrderVal = queryData[sourceId].getAdValue();
+            adOrderName = queryData[sourceId].getAdName();
             gui.changePanel("adventure", "character");
+            myDB.createAdOrderTable();
         }
         repaint();
     }
-    public String getAdOrder()
+    public void storeAdOrderData()
     {
-        return adOrder;
+        myDB.createCrOrderTable();
+        
     }
 }
