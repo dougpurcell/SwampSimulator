@@ -99,7 +99,6 @@ public class SwampSimulator {
          if (Old.equals("checkout")) {
             ss.remove(ord);
         }
-        
         ss.validate();
 
     }
@@ -113,7 +112,6 @@ public class SwampSimulator {
 
     public void playGame() throws InterruptedException, IOException {
 
-//         this would be the shit connected to the "checkout" button
         JFrame frame = new JFrame("me swamp");
 
         Game game = new Game();
@@ -126,8 +124,7 @@ public class SwampSimulator {
         while (game.returnCount() < 4){
             game.move();
             game.repaint();
-//            System.out.println(game.returnCount());
-
+            System.out.println(game.returnCount());
 
             Thread.sleep(10);
         }

@@ -24,7 +24,7 @@ public class Character extends JPanel implements ActionListener {
     protected SwampSimulator gui;
     
     private static int counter = 0;
-
+    
     private JButton itemButton;
 
     JFrame popup;
@@ -128,7 +128,7 @@ public class Character extends JPanel implements ActionListener {
     public void closePopup(){
         popup.setVisible(false);
     }
-
+   
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
