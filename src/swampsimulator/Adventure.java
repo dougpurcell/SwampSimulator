@@ -23,14 +23,16 @@ public class Adventure extends JPanel implements ActionListener {
 
     protected SwampSimulator gui;
     private JButton itemButton;
-    
+    private String sItem;
     Database myDB = new Database();
     AdventureRecord[] queryData = myDB.getQueryData();
-
+    AdventureRecord adInfo;
     JFrame popup;
     protected JLabel ptitle;
     protected JTextArea pdescription;
     protected JButton paddToCart;
+    ArrayList<JButton> buttonList = new ArrayList<JButton>();
+    private JLabel price;
     
 private JButton advgame[] = new JButton[6];
 
@@ -44,15 +46,15 @@ private JButton advgame[] = new JButton[6];
         setSize(800,800);
 
 
-            ArrayList<JButton> buttonList = new ArrayList<JButton>();
+            
 
         for(int i = 0; i < 6; i++) {
-             BufferedImage thumbnail = ImageIO.read(new File("assets/img/adventures/shrek.png"));
+             
              advgame[i] = new JButton("");
-            itemButton = new JButton( new ImageIcon(thumbnail));
+            itemButton = new JButton("");
             itemButton.setBorder(BorderFactory.createEmptyBorder());
-            itemButton.setSize(200, 200);
             itemButton.addActionListener(this);
+            itemButton.setSize(200, 200);
             itemButton.setLocation(200,200);
             add(itemButton);
             buttonList.add(itemButton);
@@ -67,7 +69,10 @@ private JButton advgame[] = new JButton[6];
         for (int i = 0; i < advgame.length; i++)
         {
             System.out.println(queryData[i].getAdName());
+            BufferedImage thumbnail = ImageIO.read(new File(queryData[i].getAdDesc()));
             advgame[i].setText(queryData[i].getAdName());
+            ImageIcon icon = new ImageIcon(thumbnail);
+            advgame[i].setIcon(icon);
         }
         
         setVisible(true);
@@ -92,18 +97,24 @@ private JButton advgame[] = new JButton[6];
         pdescription.setFont(new Font("Helvetica", Font.PLAIN, 14));
         pdescription.setLineWrap(true);
         pdescription.setWrapStyleWord(true);
-        pdescription.setSize(250, 50);
+        pdescription.setSize(250, 100);
         pdescription.setLocation(100,100);
+        pdescription.setEditable(false);
         popup.add(pdescription);
 
         paddToCart = new JButton("Add To Cart");
         paddToCart.setSize(125,50);
         paddToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
         paddToCart.setBackground(Color.gray);
-        paddToCart.setLocation(100,175);
+        paddToCart.setLocation(100,225);
         paddToCart.addActionListener(this);
         popup.add(paddToCart);
-
+        
+        price = new JLabel("Price: ");
+        price.setSize(50, 50);
+        price.setLocation(100,190);
+        popup.add(price);
+        
         popup.add(p);
         popup.setVisible(true);
 
@@ -115,14 +126,84 @@ private JButton advgame[] = new JButton[6];
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (source == itemButton) {
+        if (source == buttonList.get(0)) {
             try {
                 openPopup();
-
+                price.setText(String.valueOf("Price: " + queryData[0].getAdValue()));
+                pdescription.setText("Description: " + queryData[0].getAdImg());
+                ptitle.setText(queryData[0].getAdName());
+                
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
         }
+        if(source == buttonList.get(1))
+        {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[1].getAdValue()));
+                pdescription.setText("Description: " + queryData[1].getAdImg());
+                ptitle.setText(queryData[1].getAdName());
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            
+        }
+        if(source == buttonList.get(2))
+        {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[2].getAdValue()));
+                pdescription.setText("Description: " + queryData[2].getAdImg());
+                ptitle.setText(queryData[2].getAdName());
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            
+        }
+        if(source == buttonList.get(3))
+        {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[3].getAdValue()));
+                pdescription.setText("Description: " + queryData[3].getAdImg());
+                ptitle.setText(queryData[3].getAdName());
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            
+        }
+        if(source == buttonList.get(4))
+        {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[4].getAdValue()));
+                pdescription.setText("Description: " + queryData[4].getAdImg());
+                ptitle.setText(queryData[4].getAdName());
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            
+        }
+        if(source == buttonList.get(5))
+        {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[5].getAdValue()));
+                pdescription.setText("Description: " + queryData[5].getAdImg());
+                ptitle.setText(queryData[5].getAdName());
+
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+            
+        }
+        
+       
         if (source == paddToCart) {
             // TODO: add event for adding item to Order Class.
 

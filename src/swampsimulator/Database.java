@@ -38,6 +38,9 @@ public class Database {
          stmt.execute("CREATE TABLE Adventure" + 
                          "(AdventureID varchar(255)," +
                          "AdventureName varchar(255), " + 
+                         "AdventureDescription varchar(255), " +
+                         "AdventureImage varchar(255), " +
+                         "GameImage varchar (255)," +
                          "AdventureValue number)");
         
          System.out.println("Created Adventure table");
@@ -85,6 +88,9 @@ public class Database {
                          "(CharacterID varchar(255)," +
                          "(CharacterInventory number," +
                          " CharacterName varchar(255), " + 
+                         "CharacterImage varchar (255), " +
+                         "GameImage varchar (255), " +
+                         "CharacterDescription varchar (255), " +
                          "CharacterValue number)");
         
          System.out.println("Created Character table");
@@ -113,6 +119,7 @@ public class Database {
    }//end createTable()
     
 
+    
     
 //this method accepts the student data as input and stores it to the database 
     public void storeAdRecord(String aId, String aName, int aValue){
@@ -187,11 +194,14 @@ public class Database {
               String rsAdName = rs.getString("AdventureName");
               String rsAdId = rs.getString("AdventureId");
               int rsAdValue = rs.getInt("AdventureValue");
+              String aDes = rs.getString("AdventureDescription");
+            String aImage = rs.getString("AdventureImage");
+            String aGame = rs.getString("GameImage");
               
 
-              adv = new AdventureRecord(rsAdName, rsAdId, rsAdValue);
+              adv = new AdventureRecord(rsAdName, rsAdId, rsAdValue, aDes, aImage, aGame);
               
-              System.out.println(rsAdName + " " + rsAdId + " " + rsAdValue);
+              System.out.println(rsAdName + " " + rsAdId + " " + rsAdValue + " " + aDes + " " + aImage + " " + aGame);
           }
 
           stmt.close();
@@ -244,11 +254,14 @@ public class Database {
               int rsCrIn = rs.getInt("CharacterInventory");
               String rsCrName = rs.getString("CharacterName");
               int rsCrValue = rs.getInt("CharacterValue");
+              String rsCrDesc = rs.getString("CharacterDescription");
+              String rsCrImg = rs.getString("CharacterImage");
+              String rsGaImg = rs.getString("GameImage");
               
 
-              cr = new CharacterRecord(rsCrId, rsCrIn, rsCrName, rsCrValue);
+              cr = new CharacterRecord(rsCrId, rsCrIn, rsCrName, rsCrValue, rsCrDesc, rsCrImg, rsGaImg);
               
-              System.out.println(rsCrId + " " + rsCrIn + " " + rsCrName + " " + rsCrValue);
+              System.out.println(rsCrId + " " + rsCrIn + " " + rsCrName + " " + rsCrValue + " " + rsCrDesc + " " + rsCrImg + " " + rsGaImg);
           }
 
           stmt.close();
@@ -299,8 +312,11 @@ public class Database {
               String rsAdID = rs.getString("AdventureID");
               String rsAdName = rs.getString("AdventureName");
               int rsAdValue = rs.getInt("AdventureValue");
+              String rsDesc = rs.getString("AdventureDescription");
+            String aImage = rs.getString("AdventureImage");
+            String aGame = rs.getString("GameImage");
 
-              gameArray[numRecords] = new AdventureRecord(rsAdID,rsAdName,rsAdValue);
+              gameArray[numRecords] = new AdventureRecord(rsAdID,rsAdName,rsAdValue,rsDesc,aImage,aGame);
               numRecords++;
               System.out.println(rsAdName);
           }
@@ -354,8 +370,11 @@ public class Database {
               int rsCrIn = rs.getInt("CharacterInventory");
               String rsCrName = rs.getString("CharacterName");
               int rsCrValue = rs.getInt("CharacterValue");
+              String rsCrDesc = rs.getString("CharacterDescription");
+              String rsCrImg = rs.getString("CharacterImage");
+              String rsGaImg = rs.getString("GameImage");
 
-              crArray[numRecords] = new CharacterRecord(rsCrID, rsCrIn, rsCrName, rsCrValue);
+              crArray[numRecords] = new CharacterRecord(rsCrID, rsCrIn, rsCrName, rsCrValue, rsCrDesc, rsCrImg, rsGaImg);
               numRecords++;
               System.out.println(rsCrName);
           }
@@ -453,9 +472,8 @@ public class Database {
         return orderData;
     }
     
-    public int[][] getChartData(){
+    public String[][] getChartData(){
         String[][] chartData = new String[4][4];
-        int[][] chCount = new int[12][2];
         try {
         // load database driver class
         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
@@ -497,7 +515,7 @@ public class Database {
             orderCount++;
         }
         // array for calculating character counts
-        
+        int[][] chCount = new int[12][2];
         
         // for each 
         for (int i = 0; i < orderCount; i++){
@@ -518,28 +536,28 @@ public class Database {
                         chCount[3][1] = chCount[3][1] + 1;
                         break;
                     case "Gingerbread Man":
-                        chCount[4][1] = chCount[4][1] + 1;
+                        chCount[4][1] = chCount[0][1] + 1;
                         break;
                     case "Puss in Boots":
-                        chCount[5][1] = chCount[5][1] + 1;
+                        chCount[5][1] = chCount[1][1] + 1;
                         break;
                     case "Big Bad Wolf":
-                        chCount[6][1] = chCount[6][1] + 1;
+                        chCount[6][1] = chCount[2][1] + 1;
                         break;
                     case "Farquaad":
-                        chCount[7][1] = chCount[7][1] + 1;
+                        chCount[7][1] = chCount[3][1] + 1;
                         break;
                     case "Three Lil Piggies":
-                        chCount[8][1] = chCount[8][1] + 1;
+                        chCount[8][1] = chCount[0][1] + 1;
                         break;
                     case "Pinocchio":
-                        chCount[9][1] = chCount[9][1] + 1;
+                        chCount[9][1] = chCount[1][1] + 1;
                         break;
                     case "Three Blind Mice":
-                        chCount[10][1] = chCount[10][1] + 1;
+                        chCount[10][1] = chCount[2][1] + 1;
                         break;
                     case "Fairy Godmother":
-                        chCount[11][1] = chCount[11][1] + 1;
+                        chCount[11][1] = chCount[3][1] + 1;
                         break;
                     default:
                         break;
@@ -550,7 +568,7 @@ public class Database {
             System.out.println();
         }
         
-        for (int d = 0; d < 12; d++){
+        for (int d = 0; d < 4; d++){
             System.out.println(chCount[d][1]);
         }
         
@@ -558,7 +576,7 @@ public class Database {
         stmt.close();
         // close connection
         con.close();
-        return chCount;
+        return chartData;
        }
         // detect problems interacting with the database
        catch ( SQLException sqlException ) {
@@ -577,9 +595,9 @@ public class Database {
                System.out.println(JOptionPane.ERROR_MESSAGE);
             System.exit( 1 );
         } finally{
-            return chCount;
+            
         }
-        
+        return chartData;
     }
     
     // stuff for pulling admin inventory info - cam

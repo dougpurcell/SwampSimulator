@@ -17,9 +17,12 @@ public class CharacterRecord {
     private int adValue;
     private int crInventory;
     private int crValue; // StudentID, (contains position of student in the Array within the Applet)
+    private String crDesc;
+    private String crImg;
+    private String gaImg;
     public CharacterRecord(){}
     /** Creates a new instance of StudentRecord */
-    public CharacterRecord(String cId, int cInventory, String cName, int cValue) {
+    public CharacterRecord(String cId, int cInventory, String cName, int cValue, String cDesc, String cImg, String gImg) {
         //adID = aId;
         crID = cId;
 //        adName = aName;
@@ -27,6 +30,9 @@ public class CharacterRecord {
         crInventory = cInventory;
 //        adValue = aValue;
         crValue = cValue;
+        crDesc = cDesc;
+        crImg = cImg;
+        gaImg = gImg;
     }
     
     
@@ -60,6 +66,15 @@ public class CharacterRecord {
     public int getCrInventory(){
         return crInventory;
     }
+        public String getCrDesc(){
+        return crDesc;
+    }//end getMajor()
+    public String getCrImg(){
+        return crImg;
+    }//end getMajor()
+     public String getGImg(){
+        return gaImg;
+    }//end getMajor()
     
 //MUTATORS 
     //sets first name
@@ -94,7 +109,7 @@ public class CharacterRecord {
     }
     
     public String toString(){
-        return crID + "  " + " " + crInventory + " " + crName + " " + crValue;
+        return crID + "  " + " " + crInventory + " " + crName + " " + crValue + " " + crDesc + " " + crImg + " " + gaImg ;
     }
     
     

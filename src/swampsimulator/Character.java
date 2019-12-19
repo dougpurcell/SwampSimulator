@@ -10,6 +10,8 @@ import java.awt.*;
 import java.awt.event.*;
 import java.awt.image.BufferedImage;
 import java.io.*;
+import java.util.ArrayList;
+import java.util.Arrays;
 import javax.imageio.ImageIO;
 
 /**
@@ -30,25 +32,57 @@ public class Character extends JPanel implements ActionListener {
     protected JTextArea chrdescription;
     protected JButton chraddToCart;
     protected JLabel chrImage;
+    private JLabel price;
+    private JButton crButton[] = new JButton[11];
+    Database myDB = new Database();
+    CharacterRecord[] queryData = myDB.getCrData();
+     ArrayList<JButton> buttonList = new ArrayList<JButton>();
 
     public Character(SwampSimulator ss) throws IOException {
 
         gui = ss;
-
+        System.out.print(Arrays.toString(queryData));
         setBackground(new Color(245, 245, 245));
         setSize(800,800);
         Dimension thumbsize = new Dimension(100,100);
-        for(int i = 1; i <= 12; i++) { // TODO: Fake DB; with db would be something like length of array of DB objects
-            BufferedImage thumbnail = ImageIO.read(new File("assets/img/characters/donkey.png")); // swap to link from database, based on location.
-
-            itemButton = new JButton( new ImageIcon(thumbnail));
+        
+        //ArrayList<JButton> buttonList = new ArrayList<JButton>();
+        
+       
+        for(int i = 0; i < crButton.length; i++) { // TODO: Fake DB; with db would be something like length of array of DB objects
+            
+            
+            itemButton = new JButton("");
             itemButton.setBorder(BorderFactory.createEmptyBorder());
             itemButton.setMaximumSize(thumbsize);
             itemButton.addActionListener(this);
             itemButton.setLocation(100,100);
+            buttonList.add(itemButton);
             add(itemButton);
         }
         setVisible(true);
+        
+        crButton[0] = buttonList.get(0);
+        crButton[1] = buttonList.get(1);
+        crButton[2] = buttonList.get(2);
+        crButton[3] = buttonList.get(3);
+        crButton[4] = buttonList.get(4);
+        crButton[5] = buttonList.get(5);
+        crButton[6] = buttonList.get(6);
+        crButton[7] = buttonList.get(7);
+        crButton[8] = buttonList.get(8);
+        crButton[9] = buttonList.get(9);
+        crButton[10] = buttonList.get(10);
+        
+        for (int i = 0; i < crButton.length; i++)
+        {
+            BufferedImage thumbnail = ImageIO.read(new File(queryData[i].getCrImg()));
+            System.out.println(queryData[i].getCrName());
+            crButton[i].setText(queryData[i].getCrName());
+            ImageIcon icon = new ImageIcon(thumbnail);
+            crButton[i].setIcon(icon);
+       
+        }  
     }
 
     public void openPopup() throws IOException {
@@ -73,12 +107,17 @@ public class Character extends JPanel implements ActionListener {
         chrdescription.setSize(250, 50);
         chrdescription.setLocation(100,100);
         popup.add(chrdescription);
-
+        
+        price = new JLabel("Price: ");
+        price.setSize(70, 70);
+        price.setLocation(100,150);
+        popup.add(price);
+        
         chraddToCart = new JButton("Add To Cart");
         chraddToCart.setSize(125,50);
         chraddToCart.setFont(new Font("Helvetica", Font.PLAIN, 14));
         chraddToCart.setBackground(Color.gray);
-        chraddToCart.setLocation(100,175);
+        chraddToCart.setLocation(100,200);
         chraddToCart.addActionListener(this);
         popup.add(chraddToCart);
 
@@ -93,10 +132,123 @@ public class Character extends JPanel implements ActionListener {
     @Override
     public void actionPerformed(ActionEvent e) {
         Object source = e.getSource();
-        if (source == itemButton) {
+        if (source == buttonList.get(0)) {
             try {
                 openPopup();
-
+                price.setText(String.valueOf("Price: " + queryData[0].getCrValue()));
+                chrdescription.setText("Description: " + queryData[0].getCrDesc());
+                chrtitle.setText(queryData[1].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+        if (source == buttonList.get(1)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[1].getCrValue()));
+                chrdescription.setText("Description: " + queryData[1].getCrDesc());
+                chrtitle.setText(queryData[1].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+         if (source == buttonList.get(2)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[2].getCrValue()));
+                chrdescription.setText("Description: " + queryData[2].getCrDesc());
+                chrtitle.setText(queryData[2].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+          if (source == buttonList.get(3)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[3].getCrValue()));
+                chrdescription.setText("Description: " + queryData[3].getCrDesc());
+                chrtitle.setText(queryData[3].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+           if (source == buttonList.get(4)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[4].getCrValue()));
+                chrdescription.setText("Description: " + queryData[4].getCrDesc());
+                chrtitle.setText(queryData[4].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+            if (source == buttonList.get(5)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[5].getCrValue()));
+                chrdescription.setText("Description: " + queryData[5].getCrDesc());
+                chrtitle.setText(queryData[5].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+             if (source == buttonList.get(6)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[6].getCrValue()));
+                chrdescription.setText("Description: " + queryData[6].getCrDesc());
+                chrtitle.setText(queryData[6].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+              if (source == buttonList.get(7)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[7].getCrValue()));
+                chrdescription.setText("Description: " + queryData[7].getCrDesc());
+                chrtitle.setText(queryData[7].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+           if (source == buttonList.get(8)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[8].getCrValue()));
+                chrdescription.setText("Description: " + queryData[8].getCrDesc());
+                chrtitle.setText(queryData[8].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+            if (source == buttonList.get(9)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[9].getCrValue()));
+                chrdescription.setText("Description: " + queryData[9].getCrDesc());
+                chrtitle.setText(queryData[9].getCrName());
+                
+            } catch (IOException e1) {
+                e1.printStackTrace();
+            }
+        }
+             if (source == buttonList.get(10)) {
+            try {
+                openPopup();
+                price.setText(String.valueOf("Price: " + queryData[10].getCrValue()));
+                chrdescription.setText("Description: " + queryData[10].getCrDesc());
+                chrtitle.setText(queryData[10].getCrName());
+                
             } catch (IOException e1) {
                 e1.printStackTrace();
             }
