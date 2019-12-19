@@ -25,7 +25,6 @@ import sun.audio.AudioStream;
 public class SwampSimulator {
 
     private JFrame ss;
-    private Login lgn;
     private Adventure adv;
     private Character chr;
     protected Game game;
@@ -60,6 +59,7 @@ public class SwampSimulator {
         chr = new Character(this);
         ord = new Order(this);
         adminInv = new AdminInventory(this);
+        game = new Game();
 
         ss.setSize(1200, 800);
         ss.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -68,9 +68,6 @@ public class SwampSimulator {
         ss.add(lgnscreen);
         readAdFile("Adventure.xml");
         readCrFile("Character.xml");
-        
-
-//        ss.add(adminInv); // Cam uncomment this.
         
     }
 
@@ -99,9 +96,7 @@ public class SwampSimulator {
         if (Old.equals("order")) {
             ss.remove(ord);
         }
-        if (New.equals("game")){
-            ss.add(chr);
-        } if (Old.equals("checkout")) {
+         if (Old.equals("checkout")) {
             ss.remove(ord);
         }
         
