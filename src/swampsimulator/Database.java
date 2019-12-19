@@ -118,7 +118,71 @@ public class Database {
         
    }//end createTable()
     
+    public String[] getCharacterArt(){
+        //String[4] characterArt = new String[];
+        String characterPath[] = new String[4];
+        try {
+             // load database driver class
+         Class.forName("net.ucanaccess.jdbc.UcanaccessDriver");
 
+           
+         // connect to database
+         Connection con = DriverManager.getConnection(myConnectString);
+         
+         Statement stmt = con.createStatement();
+
+          ResultSet rs = stmt.executeQuery("SELECT * from Adventure");
+          ResultSet rsa;
+          
+          while (rs.next())
+          {
+              String bullshit = rs.getString(1);
+              
+              
+              String[] characterArt = bullshit.split(", ");
+            
+              
+              for (int i = 0; i < 4; i++){
+                  rsa = stmt.executeQuery("SELECT [GameImage] FROM Character WHERE [CharacterName] = '"+ characterArt[i]+"'");
+                  
+                  while (rsa.next()){
+                  
+                      characterPath[i] = rsa.getString(1);
+                  }
+              }
+              
+          }
+          
+          
+          
+          stmt.close();
+
+          con.close();
+          return characterPath;
+       }
+       // detect problems interacting with the database
+      catch ( SQLException sqlException ) {
+         JOptionPane.showMessageDialog( null, 
+            sqlException.getMessage(), "Database Error",
+            JOptionPane.ERROR_MESSAGE );
+         
+         System.exit( 1 );
+      }
+      
+      // detect problems loading database driver
+      catch ( ClassNotFoundException classNotFound ) {
+         JOptionPane.showMessageDialog( null, 
+            classNotFound.getMessage(), "Driver Not Found",
+            JOptionPane.ERROR_MESSAGE );
+
+         System.exit( 1 );
+      }      
+       //
+        
+        
+        //return characterArt;
+        return characterPath;
+    }
     
     
 //this method accepts the student data as input and stores it to the database 

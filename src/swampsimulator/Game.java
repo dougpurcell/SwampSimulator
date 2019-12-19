@@ -41,8 +41,10 @@ public class Game extends JPanel {
 //    final String background = "src/gameArt/adventures/shrek 2 background.png";
 //    final String background = "src/gameArt/adventures/shrek 3 background.png";
 //    final String background = "src/gameArt/adventures/shrek 4 background.png";
-//    final String background = "src/gameArt/adventures/shrek the halls.png";
-    final String background = "src/gameArt/adventures/scared shrekless.png";
+    final String background = "src/gameArt/adventures/shrek the halls.png";
+//    Database db = new Database();
+//    String characters[] = db.getCharacterArt();
+////    final String background = ;
     
     public Game(){
         
